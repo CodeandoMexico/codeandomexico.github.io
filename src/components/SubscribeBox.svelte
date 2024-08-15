@@ -3,7 +3,6 @@
 	export let text;
 	export let subscribeForm;
 
-	let mailchimp_url = "https://codeandomexico.us17.list-manage.com/subscribe/post?u=6a37b9b668c1da15bcc718fa4&amp;id=203574be23&amp;f_id=0053bbe0f0"
 	let breveo_url = "https://e84a0152.sibforms.com/serve/MUIFABjdnMHTbxQ2khl6ph4PImtHS0y057KeTtnZ8ST-53106GteNUOJUzjhpVFibL3A_kN8NSvM-dHnI4U0Eu2CLfsvr_sm9db1VdgsqQvtFJFiM9KySFp7o3hZxzON2vLkcj-ioBELpTPFkCBfA2M2lg0fRjsXNlo99Mynwc6T2rYL4mDx6KHLxCXgwauF_DuSGhxf_l71MVh9"
 	// todo: Este regex testeado no deja pasar un dominio sin TLD (ej. a@a) pero implementado aquí, sí lo permite. hay que modificarlo
 	let regex = "(?:[a-z0-9!#$%&*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"

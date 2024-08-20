@@ -4,7 +4,6 @@
   const date_updated = processDate(aviso.date_updated)
   function processDate(dateObject, locale) {
     locale ??= 'es-mx'
-    console.log(locale)
     let formattedDate = new Date(dateObject)
     let finalDate = formattedDate.toLocaleString(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
     return finalDate

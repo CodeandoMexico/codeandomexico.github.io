@@ -21,11 +21,13 @@
       {/if}
     </div>
     <h2 class="font-extrabold text-xl">{title}</h2>
-    <p class="text-sm">
-      {#each authors as author, i }
-        <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
-      {/each}
-    </p>
+    {#if authors }
+      <p class="text-sm">
+        {#each authors as author, i }
+          <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
+        {/each}
+      </p>
+    {/if}
     <p class="text-sm text-gray-400">{date}</p>
   </div>
 </div>

@@ -2,7 +2,7 @@
   import Hero from "@/components/Hero.svelte";
   import GetInvolvedCard from "@/components/Cards/GetInvolvedCard.svelte";
   import CommunityCard from "@/components/Cards/CommunityCard.svelte";
-  import CollaboratorCard from "@/components/Cards/CollaboratorCard.svelte";
+  // import CollaboratorCard from "@/components/Cards/CollaboratorCard.svelte";
   export let data
   const { comunidad } = data
 </script>
@@ -32,25 +32,6 @@
 <!-- <section id="colaboradores" class="container my-8 mx-auto">
   <h2 class="text-4xl text-center font-bold my-8">Contribuidores y colaboradores</h2>
   <div class="flex flex-wrap justify-start mx-auto">
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
-    <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
     <CollaboratorCard image="/collaborator-example.png" url="https://google.com/" name="Juana Pérez"/>
   </div>
 </section> -->

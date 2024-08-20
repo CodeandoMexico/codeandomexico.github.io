@@ -9,9 +9,11 @@
     <div>
       <h4 class="text-xl font-bold">{title}</h4>
       {#if authors }
-        {#each authors as author }
-          <p>{author.authors_id.name}</p>
+      <p>
+        {#each authors as author, i }
+            <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
         {/each}
+      </p>
       {/if }
     </div>
     <img src="/flecha-verde.png" alt="Ir al recurso" class="inline h-[20px] w-[20px] self-end">

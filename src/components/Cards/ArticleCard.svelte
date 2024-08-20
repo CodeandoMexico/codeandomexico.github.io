@@ -5,7 +5,7 @@
   export let date;
   export let image;
   export let tag;
-  export let author
+  export let authors;
 
 </script>
 
@@ -21,7 +21,11 @@
       {/if}
     </div>
     <h2 class="font-extrabold text-xl">{title}</h2>
-    <p class="text-sm">{author || ''}</p>
+    <p class="text-sm">
+      {#each authors as author, i }
+        <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
+      {/each}
+    </p>
     <p class="text-sm text-gray-400">{date}</p>
   </div>
 </div>

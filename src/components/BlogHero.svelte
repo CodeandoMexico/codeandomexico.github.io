@@ -6,6 +6,7 @@
 	export let date = '';
 	export let image =
 		'https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  export let authors = '';
 </script>
 
 <a href="/blog/{slug}">
@@ -69,7 +70,11 @@
     "
 	>
 		<div class=" bottom-0">
-			<p class="text-left text-white font-thin">Hector Garrido</p>
+			<p class="text-left text-white font-thin">
+        {#each authors as author, i}
+          <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
+        {/each}
+      </p>
 			<p class="text-left text-gray-300 font-bold">{date}</p>
 		</div>
 	</div>

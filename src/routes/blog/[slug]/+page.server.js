@@ -21,6 +21,7 @@ export async function entries() {
 export async function load({ params }) {
 	const slug = params.slug
 	const data = await client.request(readItems('Blog_Posts', {
+		fields: ['*', 'authors.authors_id.*'],
 		filter: {
 			slug: {
 				_eq: slug

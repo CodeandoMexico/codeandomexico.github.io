@@ -14,9 +14,10 @@
     slug={blog.highlight_post.slug}
     title={blog.highlight_post.title}
     tag={blog.highlight_post.tags[0]}
-    date={new Date(blog.highlight_post.date_created).toLocaleString('es-MX')}
+    date={blog.highlight_post.date_published || blog.highlight_post.date_created}
     image={`https://content.codeandomexico.org/assets/${blog.highlight_post.post_image}`}
     authors={blog.highlight_post.authors}
+    content={blog.highlight_post.content}
     />
   </div>
   <div class="container m-auto p-3">
@@ -27,7 +28,7 @@
       title={post.title}
       tag={post.tags[0]}
       authors={post.authors}
-      date={new Date(post.date_created).toLocaleString('es-MX')}
+      date={post.date_published || post.date_created}
       image={`https://content.codeandomexico.org/assets/${post.post_image}`}
       />
     {/each}

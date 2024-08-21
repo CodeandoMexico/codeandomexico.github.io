@@ -1,12 +1,12 @@
 <script>
   import Badge from "@/components/Badge.svelte";
+  import HumanDate from "../HumanDate.svelte";
   export let slug;
   export let title;
   export let date;
   export let image;
   export let tag;
   export let authors;
-
 </script>
 
 <a href="/blog/{slug}">
@@ -28,7 +28,7 @@
         {/each}
       </p>
     {/if}
-    <p class="text-sm text-gray-400">{date}</p>
+    <p class="text-sm text-gray-400"><HumanDate date={date}/></p>
   </div>
 </div>
 </a>

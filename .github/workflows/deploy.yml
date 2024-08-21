@@ -4,10 +4,10 @@ on: workflow_dispatch
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     env:
-      BASE_PATH: ${{ vars.BASE_PATH }}
       DIRECTUS_TOKEN: ${{ vars.DIRECTUS_TOKEN }}
-      path_1: ${{ toJson(vars.BASE_PATH) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

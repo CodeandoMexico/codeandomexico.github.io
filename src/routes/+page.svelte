@@ -64,27 +64,25 @@
 	<SubscribeBox color="#F1B6B8" text="¿Quieres mantenerte al tanto? Suscríbete a nuestro newsletter" subscribeForm="true" />
 </section>
 
-<section id="blog" class="p-8 mx-auto my-8">
-	<div class="text-center my-8">
+<section id="blog" class="p-8 mx-auto my-8 container">
+	<div class="text-center my-12">
 		<TitleDescription title="Blog" />
 	</div>
-	
-	<div class="flex flex-col md:flex-row columns-3 container my-8 mx-auto gap-5">
+	<div class="md:grid grid-cols-3 gap-5 mb-5">
 		{#each posts as post}
 		<ArticleCard
-			slug={post.slug}
-			title={post.title}
-			tag={post.tags[0]}
-			author={post.user_created.first_name + ' ' + post.user_created.last_name}
-			date={new Date(post.date_created).toLocaleString('es-MX')}
-			image={`https://content.codeandomexico.org/assets/${post.post_image}`}
+		slug={post.slug}
+		title={post.title}
+		tag={post.tags[0]}
+		author={post.user_created.first_name + ' ' + post.user_created.last_name}
+		date={new Date(post.date_created).toLocaleString('es-MX')}
+		image={`https://content.codeandomexico.org/assets/${post.post_image}`}
 		/>
-	{/each}
+		{/each}
 	</div>
-	
 	<div class="text-center m-auto">
 		<a href="/blog">
-		<Button action_label="Ir al blog" />
-	</a>
+			<Button action_label="Ir al blog" />
+		</a>
 	</div>
 </section>

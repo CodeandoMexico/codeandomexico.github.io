@@ -74,8 +74,8 @@
 		slug={post.slug}
 		title={post.title}
 		tag={post.tags[0]}
-		author={post.user_created.first_name + ' ' + post.user_created.last_name}
-		date={new Date(post.date_created).toLocaleString('es-MX')}
+		authors={post.authors}
+		date={post.date_published || post.date_created}
 		image={`https://content.codeandomexico.org/assets/${post.post_image}`}
 		/>
 		{/each}

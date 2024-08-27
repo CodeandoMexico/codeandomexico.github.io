@@ -16,7 +16,8 @@ export async function load() {
 			status: {
         _eq: "published"
       }
-		}
+		},
+    sort: ['-date_published'],
   }))
 
 	return {

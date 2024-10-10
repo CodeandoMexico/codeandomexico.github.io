@@ -11,13 +11,18 @@
 <div class="space-y-5">
 	<img src={icon} alt="Icon" class="" />
 
-	<h2 class="text-2xl font-bold">{title}</h2>
+	<h2 class="text-3xl font-bold">{title}</h2>
 	{#if description }
-	<p class="max-w-[550px]">
+	<p class="max-w-[550px] min-h-[90px] text-xl">
 		{description}
 	</p>
 	{/if }
 	{#if action }
-	<Button action={action} action_label={action_label} />
+	<div class="my-3">
+
+		<a href={action}>
+			<Button action_label={action_label} />
+		</a>
+	</div>
 	{/if }
 </div>

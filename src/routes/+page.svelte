@@ -8,6 +8,7 @@
 	import SubscribeBox from '@/components/SubscribeBox.svelte';
 	import ArticleCard from '@/components/Cards/ArticleCard.svelte';
 	import Button from '@/components/Button.svelte';
+	import ContentCard from '@/components/Cards/ContentCard.svelte';
 	export let data
   const { home, posts, projects } = data
 </script>
@@ -20,39 +21,38 @@
 <div id="quienes-somos" class="container px-5 mx-auto my-8">
 	<div class="flex-col md:flex-row flex my-10 gap-20 items-center">
 		<ShadowImage />
-		<TitleDescription title="Trabajamos de manera abierta y colaborativa" description="con gobiernos, activistas, periodistas, diseñadoras, desarrolladoras y más. Nos enfocamos en la parte tecnológica que acompaña al impacto cívico y social." />
+		<div class="w-5/6 p-6">
+
+			<TitleDescription title={home.about_title} description={home.about_subtitle} />
+		</div>
 	</div>
 </div>
 
 <section id="con-quien-trabajamos" class="bg-[#E6F8EE] py-8 w-full mx-auto my-8">
 	<div class="container m-auto">
 		<div class="flex flex-col md:flex-row my-10 gap-20 p-10 justify-center">
-			<IconTextAction icon="/who_1.png" title="Organizaciones" description="Construimos herramientas digitales, abrimos conocimiento y acompañamos a equipos técnicos y no técnicos." action="/organizaciones" action_label="Hablemos"/>
+			<IconTextAction icon="/who_1.png" title="Organizaciones" description="Construimos herramientas digitales, abrimos conocimiento y acompañamos a equipos técnicos y no técnicos." action="/proyectos" action_label="Colaboremos"/>
 			<IconTextAction icon="/who_2.png" title="Personas" description="Colaboramos con personas de todos los perfiles, cualquiera que comparta nuestros principios, valores y código de conducta puede ser parte de esta comunidad." action="/comunidad" action_label="Súmate"/>
 		</div>
 	</div>
 </section>
 	
-<section id="en-que-estamos-trabajando" class="p-8 mx-auto my-8">
-	<div class="text-center">
+<section id="en-que-estamos-trabajando" class="p-8 mx-auto my-8 container">
+	<div class="text-center my-6 w-2/3 mx-auto">
 		<TitleDescription title="En qué estamos trabajando" description="Todos nuestros proyectos son open source, esto significa que cualquiera es libre de utilizar el código, datos y otros materiales de acuerdo a la licencia que contenga." />
 	</div>
 	
 	<div id="nuestros-proyectos" class="md:grid grid-cols-3  container m-auto gap-5">
 		{#each projects as project}
-		<ProjectCard
+		<ContentCard
 			title={project.title}
 			description={project.short_description}
-			tags={project.tags || []}
 			image={`https://content.codeandomexico.org/assets/${project.image}`}
-			website={project.website}
-			maker={project.maker}
-			repository={project.repository}
-		/>
+			link={project.website} />
 	{/each}
 
 	</div>
-	<div class="text-center my-8">
+	<div class="text-center my-8 max-w-1/2">
 		<a href="/proyectos" >	
 			<Button  action_label="Ver todos los proyectos" />
 		</a>
@@ -66,7 +66,7 @@
 
 <section id="blog" class="p-8 mx-auto my-8 container">
 	<div class="text-center my-12">
-		<TitleDescription title="Blog" />
+		<TitleDescription title="Hablemos de tecnología cívica" />
 	</div>
 	<div class="md:grid grid-cols-3 gap-5 mb-5">
 		{#each posts as post}

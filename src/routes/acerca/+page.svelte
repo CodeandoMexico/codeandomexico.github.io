@@ -25,7 +25,7 @@
     <div>
       <p>Formamos parte de Code for All, una red internacional de agentes de cambio de tecnología cívica compuesta por 31 organizaciones de todo el mundo. Hemos trabajado de la mano con Code for Australia, Code for Romania, Code for Pakistan, Open Knowledge Brasil y otras organizaciones en proyectos con impacto en toda la región.</p>
       <div class="my-3">
-        <a href="https://codeforall.org/" target="_blank" class="uppercase font-semibold">Ir al sitio <img src="/flecha.png" alt="flecha" class="inline ml-2"></a>
+        <a href="https://codeforall.org/" target="_blank" class="uppercase font-semibold hover:underline">Ir al sitio <img src="/flecha.png" alt="flecha" class="inline ml-2"></a>
       </div>
     </div>
   </div>

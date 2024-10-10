@@ -35,9 +35,11 @@
     <Badge text="Datos abiertos" color="#F3F3F4"/>
     <Badge text="Código abierto" color="#F3F3F4"/>
   </div> -->
-  <div class="flex flex-col md:flex-row columns-3 container my-8 mx-auto gap-20">
+  <!-- <div class="flex flex-col basis-1/3 md:flex-row columns-3 container my-8 mx-auto gap-20"> -->
+    <div class="grid grid-cols-1 md:grid-cols-3 container my-8 mx-auto gap-20">
     {#each projects as project}
-      <ProjectCard
+      <div class="my-5">
+        <ProjectCard
         title={project.title}
         description={project.short_description}
         tags={project.tags || []}
@@ -45,7 +47,8 @@
         website={project.website}
         maker={project.maker}
         repository={project.repository}
-      />
+        />
+      </div>
     {/each}
   </div>
 </section>

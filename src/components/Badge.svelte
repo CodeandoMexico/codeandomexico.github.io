@@ -1,15 +1,21 @@
 <script>
   	import { onMount } from 'svelte';
     export let text = 'Badge';
-    export let color = '#0073F4';
+    export let color = getRandomHexColor();
+    function getRandomHexColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    let contrastedColor = '';
 
-
-let contrastedColor = '';
-
-onMount(async () => {
-		const fontColorContrast = (await import('font-color-contrast')).default;
-		contrastedColor = fontColorContrast(color);
-	});
+    onMount(async () => {
+        const fontColorContrast = (await import('font-color-contrast')).default;
+        contrastedColor = fontColorContrast(color);
+      });
 </script>
 
 

@@ -8,7 +8,7 @@
 
 <Hero accentColor="#FF6D53" image="/recursos.png" title="Recursos" subtitle="Conocimiento que hemos construido a lo largo del tiempo sobre tecnología cívica, datos abiertos y más." />
 
-<div id="filtros" class="container mx-auto flex justify-start md:justify-center gap-3 my-8 flex-wrap p-3">
+<!-- <div id="filtros" class="container mx-auto flex justify-start md:justify-center gap-3 my-8 flex-wrap p-3">
   <p class="uppercase font-bold inline">Todo</p>
   <p class="uppercase font-bold inline">Conocimiento</p>
   <p class="uppercase font-bold inline">Herramientas</p>
@@ -16,7 +16,7 @@
   <p class="uppercase font-bold inline">Eventos</p>
   <p class="uppercase font-bold inline">Oportunidades</p>
   <p class="uppercase font-bold inline">Otros</p>
-</div>
+</div> -->
 <section id="conocimiento" class="container mx-auto my-6 p-3">
   <h2 class="text-5xl font-bold"><img src="/recursos-conocimiento.png" class="inline h-[50px] my-5" alt="Conocimiento">
     Conocimiento</h2>

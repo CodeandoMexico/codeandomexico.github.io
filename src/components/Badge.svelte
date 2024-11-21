@@ -1,6 +1,7 @@
 <script>
   	import { onMount } from 'svelte';
     export let text = 'Badge';
+    export let handleTags;
     export let color = getRandomHexColor();
     function getRandomHexColor() {
       const letters = '0123456789ABCDEF';
@@ -19,11 +20,21 @@
 </script>
 
 
-<span class="rounded-full px-3 py-1 text-xs "
+<a
+  href={null}
+  class="rounded-full px-3 py-1 text-xs "
   style={
     `background-color: ${color};
-    color: ${contrastedColor}`
+    color: ${contrastedColor};
+    cursor: pointer;`
   }
+  on:click={handleTags(text)}
 >
   {text}
-</span>
+</a>
+
+<style>
+  a:hover {
+    filter: brightness(0.9);
+  }
+</style>

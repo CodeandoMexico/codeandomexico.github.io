@@ -20,9 +20,15 @@ export async function load() {
     sort: ['-date_published'],
   }))
 
+  let tags = ['todos'];
+  posts.forEach(item => {
+    tags = [...new Set([...tags, ...item.tags.map((tag = '') => tag.toLowerCase()).flat()])]
+  })
+
 	return {
 		blog,
-    posts
+    posts,
+    tags,
 	}
 }
 

@@ -1,4 +1,5 @@
 import client from '$lib/apiClient'
+import { getFlatArrayUnrepeated } from '$lib/utilities';
 import { readItems } from '@directus/sdk'
 
 export async function load() {
@@ -11,8 +12,11 @@ export async function load() {
 		}
   }))
 
+  const tags = getFlatArrayUnrepeated(projects);
+
 	return {
-    projects
+    projects,
+    tags
 	}
 }
 

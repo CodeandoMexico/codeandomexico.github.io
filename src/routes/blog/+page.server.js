@@ -1,4 +1,5 @@
 import client from '$lib/apiClient'
+import { getFlatArrayUnrepeated } from '$lib/utilities';
 import { readSingleton, readItems } from '@directus/sdk'
 
 export async function load() {
@@ -20,9 +21,13 @@ export async function load() {
     sort: ['-date_published'],
   }))
 
+  const tags = getFlatArrayUnrepeated(posts);
+  tags.unshift('todos');
+
 	return {
 		blog,
-    posts
+    posts,
+    tags,
 	}
 }
 

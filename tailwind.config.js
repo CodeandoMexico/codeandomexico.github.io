@@ -16,6 +16,9 @@ export default {
         cmxred: "#FF6D53",
         cmxblue: "#0073F4"
       },
+      padding: {
+        hero: '83px'
+      }
     }
   },
   plugins: [require("daisyui"),  require('@tailwindcss/typography')]

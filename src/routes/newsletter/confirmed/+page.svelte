@@ -1,4 +1,4 @@
-<div class="container mx-auto py-20">
+<div class="container mx-auto my-20 pt-hero">
   <div class="h-full flex flex-col justify-center min-h-20 py-20">
 
     

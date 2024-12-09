@@ -1,11 +1,17 @@
 <script>
   import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
+  import { onDestroy } from 'svelte';
   import ReadingTime from '@/components/ReadingTime.svelte';
   import HumanDate from '@/components/HumanDate.svelte';
   export let data
   const { post } = data
 
   updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
+  const title = document.title
+
+  onDestroy(() => {
+    document.title = title
+  })
 </script>
 
 <svelte:head>

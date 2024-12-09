@@ -1,9 +1,12 @@
 <script>
+  import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
   import Hero from "@/components/Hero.svelte";
   import RecursosCard from "@/components/Cards/RecursosCard.svelte";
 
   export let data
   const { conocimientos, recursos } = data
+
+  updateMenuSelector({url: '/recursos'})
 </script>
 
 <Hero accentColor="#FF6D53" image="/recursos.png" title="Recursos" subtitle="Conocimiento que hemos construido a lo largo del tiempo sobre tecnología cívica, datos abiertos y más." />

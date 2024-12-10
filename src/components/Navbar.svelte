@@ -1,4 +1,6 @@
 <script>
+  import { principalMenuStore } from "@/store";
+
   function closeHambMenu() {
     document.getElementById('hamburger-menu').classList.toggle('hidden');
   }
@@ -12,9 +14,9 @@
     {name: "Comunidad", url: "/comunidad"},
     {name: "Recursos", url: "/recursos"},
     {name: "Blog", url: "/blog"},
-    ];
+  ];
 </script>
-<nav class="w-full  py-5">
+<nav class="absolute w-full py-5 max-lg:bg-white">
   <div class="flex container m-auto items-center  px-5">
     <a href="/">
       <span class="sr-only">Codeando México</span>
@@ -25,7 +27,14 @@
 
     <ul class="gap-5 hidden lg:flex">
       {#each menuItems as item }
-        <li><a class="hover:underline hover:gray-800 uppercase font-bold" href="{item.url}">{item.name}</a></li>
+        <li>
+          <a
+            class={`hover:underline hover:gray-800 uppercase font-bold ${$principalMenuStore.urlActive.includes(item.url) ? $principalMenuStore.color : ''}`.trim()}
+            href="{item.url}"
+          >
+            {item.name}
+          </a>
+        </li>
       {/each}
     </ul>
 
@@ -43,7 +52,7 @@
 <div id="hamburger-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
   <!-- Background backdrop, show/hide based on slide-over state. -->
   <div class="fixed inset-0 z-10"></div>
-  <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+  <div class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
     <div class="flex items-center justify-between">
       <a href="/" class="-m-1.5 p-1.5">
         <span class="sr-only">Codeando México</span>
@@ -62,7 +71,7 @@
           {#each menuItems as item}
           <div class="mx-3 block px-3 py-2 divide-y divide-gray-500 hover:bg-gray-50">
 
-            <a href="{item.url}" class="-text-base font-semibold leading-7 text-gray-900 uppercase ">{item.name}</a>
+            <a href="{item.url}" class={`-text-base font-semibold leading-7 uppercase ${$principalMenuStore.urlActive.includes(item.url) ? 'text-cmxgreen' : 'text-gray-900'}`}>{item.name}</a>
           </div>
           {/each}
         </div>

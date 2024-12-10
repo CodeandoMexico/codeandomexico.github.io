@@ -1,16 +1,18 @@
 <script>
+  import { browser } from '$app/environment';
   import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
   import { onDestroy } from 'svelte';
   import ReadingTime from '@/components/ReadingTime.svelte';
   import HumanDate from '@/components/HumanDate.svelte';
-  export let data
-  const { post } = data
+  export let data;
+  const { post } = data;
+  let title = '';
 
   updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
-  const title = document.title
+  if (browser) { title = document.title }
 
   onDestroy(() => {
-    document.title = title
+    if (browser) { document.title = title }
   })
 </script>
 

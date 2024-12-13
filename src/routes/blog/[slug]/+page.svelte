@@ -1,8 +1,19 @@
 <script>
+  import { browser } from '$app/environment';
+  import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
+  import { onDestroy } from 'svelte';
   import ReadingTime from '@/components/ReadingTime.svelte';
   import HumanDate from '@/components/HumanDate.svelte';
-  export let data
-  const { post } = data
+  export let data;
+  const { post } = data;
+  let title = '';
+
+  updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
+  if (browser) { title = document.title }
+
+  onDestroy(() => {
+    if (browser) { document.title = title }
+  })
 </script>
 
 <svelte:head>
@@ -13,8 +24,7 @@
   <meta property="og:image" content={`https://content.codeandomexico.org/assets/${post.post_image}`} />
 </svelte:head>
 
-<section class="my-10">
-
+<section class="my-10 pt-hero">
   <div class="container m-auto max-w-prose my-8">
     <h1 class="text-5xl font-black my-8">{post.title}</h1>
     {#if post.authors}
@@ -32,5 +42,4 @@
   <div class="container m-auto p-3 prose prose-blockquote:text-2xl prose-blockquote:border-green-400">
     <p class="prose text-lg">{@html post.content}</p>
   </div>
-
 </section>

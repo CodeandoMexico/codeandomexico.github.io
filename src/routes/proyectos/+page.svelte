@@ -1,4 +1,5 @@
 <script>
+  import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
   import Hero from '@/components/Hero.svelte';
   import IconTextAction from '@/components/IconTextAction.svelte';
   import SubscribeBox from '@/components/SubscribeBox.svelte';
@@ -33,6 +34,8 @@
     activeTags = activeTags.filter(val => val !== tag);
     getFilteredProjects();
   }
+
+  updateMenuSelector({url: '/proyectos'})
 </script>
 
 <Hero title="Proyectos" subtitle="Colaboramos desde el diseño hasta la implementación de tecnología cívica." image="/proyectos.png"/>

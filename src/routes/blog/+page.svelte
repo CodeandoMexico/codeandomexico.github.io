@@ -1,10 +1,13 @@
 <script>
+  import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
   import ArticleCard from "@/components/Cards/ArticleCard.svelte";
   import BlogHero from "@/components/BlogHero.svelte";
   export let data
   const { blog, posts } = data
+
+  updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
 </script>
-<div class="container my-20 mx-auto">
+<div class="container my-20 pt-hero mx-auto">
 
   <div class="container m-auto px-3">
     <div class="my-7">

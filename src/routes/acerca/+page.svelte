@@ -1,6 +1,9 @@
 <script>
+  import { updateMenuSelector } from '@/lib/menuSelectorUpdater';
   import Hero from '@/components/Hero.svelte';
   import IconTextAction from '@/components/IconTextAction.svelte';
+
+  updateMenuSelector({url: '/acerca'})
 </script>
 
 <Hero accentColor="#0073F4" title="Acerca de" subtitle="Somos una organización sin fines de lucro, basada en una comunidad abierta." image="/acerca.png"/>

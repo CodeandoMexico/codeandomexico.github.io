@@ -3,10 +3,37 @@
   import Hero from '@/components/Hero.svelte';
   import IconTextAction from '@/components/IconTextAction.svelte';
   import SubscribeBox from '@/components/SubscribeBox.svelte';
-  import Badge from '@/components/Badge.svelte';
 	import ProjectCard from '@/components/Cards/ProjectCard.svelte';
-  export let data
-  const { projects } = data
+  import MenuTagsProject from '@/components/MenuTagsProject.svelte';
+  export let data;
+  const { projects, tags } = data;
+  let activeTags = [];
+  let filteredProjects = [...projects];
+
+  const getFilteredProjects = () => {
+    const setToLowerCase = (item = '') => item?.toLowerCase();
+    const areTagsIncluded = (item = '') => activeTags?.includes(item);
+
+    filteredProjects = Boolean(activeTags?.length)
+      ? projects.filter(project => project.tags?.map(setToLowerCase).some(areTagsIncluded))
+      : [...projects];
+  }
+
+  const addToFilter = (tag = '') => {
+    if (activeTags.includes(tag)) {
+      return false;
+    }
+
+    tag = tag.toLowerCase();
+    activeTags.push(tag);
+    getFilteredProjects();
+  }
+
+  const removeFromFilter = (tag = '') => {
+    tag = tag.toLowerCase();
+    activeTags = activeTags.filter(val => val !== tag);
+    getFilteredProjects();
+  }
 
   updateMenuSelector({url: '/proyectos'})
 </script>
@@ -30,17 +57,11 @@
 
 <section id="nuestros-proyectos" class="container mx-auto my-12 p-3">
   <h1 class="text-4xl font-bold my-3">Conoce nuestros proyectos</h1>
-  <!-- TODO: Habilitar Badges -->
-  <!-- <div class="flex gap-4 my-6 flex-wrap">
-    <Badge text="Movilidad" color="#F3F3F4"/>
-    <Badge text="Educación" color="#F2D301"/>
-    <Badge text="Legislativo" color="#F3F3F4"/>
-    <Badge text="Datos abiertos" color="#F3F3F4"/>
-    <Badge text="Código abierto" color="#F3F3F4"/>
-  </div> -->
-  <!-- <div class="flex flex-col basis-1/3 md:flex-row columns-3 container my-8 mx-auto gap-20"> -->
-    <div class="grid grid-cols-1 md:grid-cols-3 container my-8 mx-auto gap-20">
-    {#each projects as project}
+  <div class="flex gap-4 my-6 flex-wrap">
+    <MenuTagsProject tags={tags} addToFilter={addToFilter} removeFromFilter={removeFromFilter} />
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 container my-8 mx-auto gap-20">
+    {#each filteredProjects as project}
       <div class="my-5">
         <ProjectCard
         title={project.title}

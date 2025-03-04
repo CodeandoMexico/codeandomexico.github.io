@@ -56,7 +56,7 @@
     <div class="flex items-center justify-between">
       <a href="/" class="-m-1.5 p-1.5">
         <span class="sr-only">Codeando México</span>
-        <img class="h-8 w-auto" src="/logo_cmx.png" alt="Logo" />
+        <img class="h-8 w-auto" src="/img/logo-cmx.svg" style="width: 100%;" alt="Logo" />
       </a>
       <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" on:click={closeHambMenu}>
         <span class="sr-only">Close menu</span>

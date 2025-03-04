@@ -1,7 +1,7 @@
 <script>
-	export let image = '/photo_default.png';
-	export let title = 'Ali Gonzales';
-	export let description = 'Incidencia y comunidad';
+	export let image = '/img/photo-default.png';
+	export let title = '';
+	export let description = '';
 </script>
 
 <div style={`box-shadow: 7px 7px 1px black;`}>

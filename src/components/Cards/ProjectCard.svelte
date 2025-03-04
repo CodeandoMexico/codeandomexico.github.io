@@ -23,11 +23,6 @@
         {description}
       </div>
     </div>
-    <!-- <div class="Button justify-start items-center gap-2 inline-flex">
-      <div class="ConoceMS text-black text-base font-bold font-['Albert Sans'] leading-normal">
-        {website}
-      </div>
-    </div> -->
     <div>
       <p>{maker}</p>
     </div>

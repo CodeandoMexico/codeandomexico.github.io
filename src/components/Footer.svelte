@@ -10,7 +10,7 @@
               <div class="Frame9 p-2 bg-neutral-50 rounded-[45px] flex-col justify-start items-start gap-px inline-flex"><a href="https://github.com/CodeandoMexico/" target="_blank" rel="noopener noreferrer"><img src="/github.svg" alt="X logo" srcset=""></a></div>
               <div class="Frame10 p-2 bg-neutral-50 rounded-[45px] flex-col justify-start items-start gap-px inline-flex"><a href="https://codeandomexico.slack.com/" target="_blank" rel="noopener noreferrer"><img src="/slack.svg" alt="X logo" srcset=""></a></div>
           </div>
-          <div class="HolaCodeandomexicoOrg text-neutral-50 text-sm font-normal font-['Albert Sans'] leading-[21px]">hola@codeandomexico.org</div>
+          <div class="HolaCodeandomexicoOrg text-neutral-50 text-sm font-normal font-['Albert Sans'] leading-[21px]">equipo@codeandomexico.org</div>
       </div>
   </div>
 </footer>

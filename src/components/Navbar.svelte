@@ -20,7 +20,7 @@
   <div class="flex container m-auto items-center  px-5">
     <a href="/">
       <span class="sr-only">Codeando México</span>
-      <img src="/logo_cmx.png" alt="Logo" />
+      <img src="/img/logo-cmx.svg" style="height: 44px;" alt="Codeando México" />
     </a>
   <div class="flex-grow"></div>
 
@@ -38,7 +38,7 @@
       {/each}
     </ul>
 
-      
+
       <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 lg:hidden" on:click={openHambMenu}>
         <span class="sr-only">Open main menu</span>
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

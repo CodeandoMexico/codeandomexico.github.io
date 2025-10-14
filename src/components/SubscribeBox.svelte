@@ -75,6 +75,11 @@
 		}
 	}
 
+	function isFormTooFast() {
+		const timeElapsed = Date.now() - formStartTime;
+		return timeElapsed < 3000; // Menos de 3 segundos es sospechoso
+	}
+
 	// Validate form submission
 	function validateForm(event) {
 		const target = event.target;

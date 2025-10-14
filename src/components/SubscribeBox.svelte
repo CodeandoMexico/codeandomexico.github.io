@@ -75,12 +75,6 @@
 		}
 	}
 
-	// Check if form was filled too quickly (likely bot)
-	function isFormTooFast() {
-		const timeElapsed = Date.now() - formStartTime;
-		return timeElapsed < 3000; // Less than 3 seconds is suspicious
-	}
-
 	// Validate form submission
 	function validateForm(event) {
 		const target = event.target;
@@ -94,7 +88,6 @@
 			return false;
 		}
 
-		// Check if form was submitted too quickly
 		if (isFormTooFast()) {
 			event.preventDefault();
 			console.log('Bot detectado: formulario enviado muy rápido');
@@ -102,7 +95,6 @@
 			return false;
 		}
 
-		// Check Turnstile (if enabled)
 		console.log('Verificando respuesta de Turnstile:', turnstileResponse);
 		console.log('ID del widget de Turnstile:', turnstileWidgetId);
 		console.log('isTurnstileLoaded:', isTurnstileLoaded);
@@ -113,7 +105,6 @@
 			return false;
 		}
 
-		// If validation passes, allow form submission to Brevo
 		console.log('Validación del formulario pasada, enviando a Brevo');
 		return true;
 	}
@@ -180,21 +171,16 @@
 							</button>
 						</div>
 
-						<!-- Cloudflare Turnstile Container -->
 						<div id="turnstile-container" class="flex justify-center"></div>
 
-						<!-- Honeypot fields for spam prevention -->
 						<div style="position: absolute; left: -5000px;" aria-hidden="true">
-							<!-- Original honeypot -->
 							<input
 								type="text"
 								name="b_6a37b9b668c1da15bcc718fa4_203574be23"
 								tabindex="-1"
 								value=""
 							/>
-							<!-- Additional honeypot field -->
 							<input type="text" name="website" tabindex="-1" value="" autocomplete="off" />
-							<!-- Time-based validation field -->
 							<input type="hidden" name="form_time" value={formStartTime} />
 						</div>
 					</div>

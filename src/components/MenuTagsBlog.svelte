@@ -1,14 +1,12 @@
 <script>
-  export let activeTag;
-  export let handleTags;
-  export let tags;
+  let { activeTag, handleTags, tags } = $props();
 </script>
 
 {#each tags as tag}
   <a
     href={null}
     class={activeTag === tag ? 'text-cmxgreen' : null}
-    on:click={() => handleTags(tag)}
+    onclick={() => handleTags(tag)}
   >
     {tag.toUpperCase()}
   </a>

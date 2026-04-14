@@ -2,14 +2,27 @@
 	import Badge from './Badge.svelte';
   import ReadingTime from './ReadingTime.svelte';
   import HumanDate from './HumanDate.svelte';
-	export let tag = '';
-	export let title = 'Blog';
-  export let slug = '';
-	export let date = '';
-	export let image =
-		'https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-  export let authors = '';
-  export let content = '';
+  /**
+   * @typedef {Object} Props
+   * @property {string} [tag]
+   * @property {string} [title]
+   * @property {string} [slug]
+   * @property {string} [date]
+   * @property {string} [image]
+   * @property {Array<{authors_id: {name: string}}>} [authors]
+   * @property {string} [content]
+   */
+
+  /** @type {Props} */
+  let {
+    tag = '',
+    title = 'Blog',
+    slug = '',
+    date = '',
+    image = 'https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    authors = [],
+    content = ''
+  } = $props();
 </script>
 
 <a href="/blog/{slug}">

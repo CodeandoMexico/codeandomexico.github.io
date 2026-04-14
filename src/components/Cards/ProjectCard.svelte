@@ -1,17 +1,31 @@
 <script>
 	import Badge from "../Badge.svelte";
-  export let title;
-  export let description;
-  export let image;
-  export let website;
-  export let repository;
-  export let tags = [];
-  export let maker = "";
+  /**
+   * @typedef {Object} Props
+   * @property {any} title
+   * @property {any} description
+   * @property {any} image
+   * @property {any} website
+   * @property {any} repository
+   * @property {any} [tags]
+   * @property {string} [maker]
+   */
+
+  /** @type {Props} */
+  let {
+    title,
+    description,
+    image,
+    website,
+    repository,
+    tags = [],
+    maker = ""
+  } = $props();
 </script>
 
 
 <div class="Card w-full min-h-[519px] flex-col justify-start items-start inline-flex">
-  <img class="Image4 object-cover h-[200px] w-full" src={image} />
+  <img class="Image4 object-cover h-[200px] w-full" src={image} alt={title} />
   <div class="Frame5 self-stretch min-h-[269px] h-full flex-col justify-start pt-3 items-start gap-4 flex">
     <div class="Heading self-stretch min-h-[84px] flex-col justify-start items-start gap-8 flex">
       <div class="Heading self-stretch text-black text-[31.25px] font-bold font-['Albert Sans'] leading-10">

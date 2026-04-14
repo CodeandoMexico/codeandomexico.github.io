@@ -1,7 +1,13 @@
 <script>
   	import { onMount } from 'svelte';
-    export let text = 'Badge';
-    export let color = getRandomHexColor();
+  /**
+   * @typedef {Object} Props
+   * @property {string} [text]
+   * @property {any} [color]
+   */
+
+  /** @type {Props} */
+  let { text = 'Badge', color = getRandomHexColor() } = $props();
     function getRandomHexColor() {
       const letters = '0123456789ABCDEF';
       let color = '#';
@@ -10,7 +16,7 @@
       }
       return color;
     }
-    let contrastedColor = '';
+    let contrastedColor = $state('');
 
     onMount(async () => {
         const fontColorContrast = (await import('font-color-contrast')).default;

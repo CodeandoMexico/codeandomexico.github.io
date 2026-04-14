@@ -1,7 +1,7 @@
 <script>
-  export let data
   import HumanDate from '@/components/HumanDate.svelte';
-  const { aviso } = data
+  let { data } = $props();
+  const aviso = $derived(data.aviso);
 </script>
 
 <div id="aviso" class="container mx-auto my-20 pt-hero">

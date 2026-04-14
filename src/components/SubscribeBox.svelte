@@ -1,9 +1,6 @@
 <script>
-	import { onMount } from 'svelte';
-
-	export let color;
-	export let text;
-	export let subscribeForm;
+	/** @type {{ color: string, text: string, subscribeForm?: boolean }} */
+	let { color, text, subscribeForm = false } = $props();
 
 	let breveo_url =
 		'https://e84a0152.sibforms.com/serve/MUIFABjdnMHTbxQ2khl6ph4PImtHS0y057KeTtnZ8ST-53106GteNUOJUzjhpVFibL3A_kN8NSvM-dHnI4U0Eu2CLfsvr_sm9db1VdgsqQvtFJFiM9KySFp7o3hZxzON2vLkcj-ioBELpTPFkCBfA2M2lg0fRjsXNlo99Mynwc6T2rYL4mDx6KHLxCXgwauF_DuSGhxf_l71MVh9';
@@ -136,43 +133,11 @@
 			</p>
 		</div>
 		{#if subscribeForm}
+		{#if subscribeForm}
 			<div class="flex justify-center mx-auto my-3">
-				<form
-					class="w-full max-w-sm validate"
-					action={breveo_url}
-					method="post"
-					id="newsletter-form"
-					target="_blank"
-					on:submit={validateForm}
-					on:focus={handleFormFocus}
-				>
-					<div class="flex flex-col items-center space-y-3">
-						<div class="flex items-center w-full">
-							<input
-								class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none"
-								placeholder="correo@ejemplo.org"
-								aria-label="Email address"
-								type="email"
-								name="EMAIL"
-								required={true}
-								value=""
-								pattern={regex}
-							/>
-							<button
-								class="flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold font-['Albert Sans'] uppercase leading-normal"
-								type="submit"
-							>
-								<input
-									type="submit"
-									name="subscribe"
-									class="button uppercase"
-									value="Suscribirme"
-								/>
-							</button>
-						</div>
-
-						<div id="turnstile-container" class="flex justify-center"></div>
-
+				<form class="w-full max-w-sm validate" action={breveo_url} method="post" id="newsletter-form" target="_blank" >
+					<div class="flex items-center">
+						<input class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none" placeholder="correo@ejemplo.org" aria-label="Full name" type="email" name="EMAIL" required value="" pattern={regex}>
 						<div style="position: absolute; left: -5000px;" aria-hidden="true">
 							<input
 								type="text"
@@ -183,6 +148,9 @@
 							<input type="text" name="website" tabindex="-1" value="" autocomplete="off" />
 							<input type="hidden" name="form_time" value={formStartTime} />
 						</div>
+						<button aria-label="Suscribirme" class="flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold font-['Albert Sans'] uppercase leading-normal" type="button">
+							<input type="submit" name="subscribe" class="button uppercase" value="Suscribirme">
+						</button>
 					</div>
 				</form>
 			</div>

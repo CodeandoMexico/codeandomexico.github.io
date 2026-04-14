@@ -1,6 +1,12 @@
 <script>
-	export let image = '/photo_example.png';
-	export let overlay = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [image]
+	 * @property {string} [overlay]
+	 */
+
+	/** @type {Props} */
+	let { image = '/photo_example.png', overlay = '' } = $props();
 </script>
 
 <div class="shadow-image drop-shadow-2xl">

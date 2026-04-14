@@ -1,8 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
-	export let action_label;
-	export let color = "#00D690";
-	let contrastedColor = '';
+
+	/** @type {{ action_label: string, color?: string }} */
+	let { action_label, color = "#00D690" } = $props();
+
+	let contrastedColor = $state('');
+
+	/**
+	 * @param {string} hex
+	 * @param {number} percent
+	 */
 	function darkenColor(hex, percent) {
 		const num = parseInt(hex.slice(1), 16),
 			amt = Math.round(2.55 * percent),
@@ -18,16 +25,22 @@
 			.toString(16)
 			.slice(1)}`;
 	}
-	let darkerColor = darkenColor(color, 7);
+
+	let darkerColor = $derived(darkenColor(color, 7));
+
 	onMount(async () => {
-			const fontColorContrast = (await import('font-color-contrast')).default;
-			contrastedColor = fontColorContrast(color);
-		});
+		const fontColorContrast = (await import('font-color-contrast')).default;
+		contrastedColor = fontColorContrast(color);
+	});
 </script>
 
-<button class="Button min-w-[137px] h-12 px-6 py-2 rounded-3xl justify-center items-center inline-flex hover:bg-white/75 transition ease-in duration-150" style={
-	`background-color: ${color};
-	color: ${contrastedColor}; `
-} onMouseOver="this.style.backgroundColor='{darkerColor}'" onMouseOut="this.style.backgroundColor='{color}'">
-  <span class="Button text-base font-['Albert Sans'] uppercase leading-normal font-bold">	{action_label}</span>
+<button
+	class="Button min-w-[137px] h-12 px-6 py-2 rounded-3xl justify-center items-center inline-flex hover:bg-white/75 transition ease-in duration-150"
+	style={`background-color: ${color}; color: ${contrastedColor};`}
+	onmouseover={(e) => { e.currentTarget.style.backgroundColor = darkerColor; }}
+	onmouseout={(e) => { e.currentTarget.style.backgroundColor = color; }}
+	onfocus={(e) => { e.currentTarget.style.backgroundColor = darkerColor; }}
+	onblur={(e) => { e.currentTarget.style.backgroundColor = color; }}
+>
+	<span class="Button text-base font-['Albert Sans'] uppercase leading-normal font-bold">{action_label}</span>
 </button>

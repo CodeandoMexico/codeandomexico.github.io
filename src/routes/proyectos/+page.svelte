@@ -5,37 +5,32 @@
   import SubscribeBox from '@/components/SubscribeBox.svelte';
 	import ProjectCard from '@/components/Cards/ProjectCard.svelte';
   import MenuTagsProject from '@/components/MenuTagsProject.svelte';
-  export let data;
-  const { projects, tags } = data;
-  let activeTags = [];
-  let filteredProjects = [...projects];
-
-  const getFilteredProjects = () => {
-    const setToLowerCase = (item = '') => item?.toLowerCase();
-    const areTagsIncluded = (item = '') => activeTags?.includes(item);
-
-    filteredProjects = Boolean(activeTags?.length)
-      ? projects.filter(project => project.tags?.map(setToLowerCase).some(areTagsIncluded))
-      : [...projects];
-  }
+  let { data } = $props();
+  const projects = $derived(data.projects);
+  const tags = $derived(data.tags);
+  /** @type {string[]} */
+  let activeTags = $state([]);
+  const filteredProjects = $derived(
+    !activeTags.length
+      ? [...projects]
+      : projects.filter(project =>
+          project.tags?.map((t = '') => t?.toLowerCase()).some((t = '') => activeTags.includes(t))
+        )
+  );
 
   const addToFilter = (tag = '') => {
-    if (activeTags.includes(tag)) {
-      return false;
-    }
-
     tag = tag.toLowerCase();
-    activeTags.push(tag);
-    getFilteredProjects();
+    if (!activeTags.includes(tag)) {
+      activeTags = [...activeTags, tag];
+    }
   }
 
   const removeFromFilter = (tag = '') => {
     tag = tag.toLowerCase();
     activeTags = activeTags.filter(val => val !== tag);
-    getFilteredProjects();
   }
 
-  updateMenuSelector({url: '/proyectos'})
+  $effect(() => updateMenuSelector({url: '/proyectos'}))
 </script>
 
 <Hero title="Proyectos" subtitle="Colaboramos desde el diseño hasta la implementación de tecnología cívica." image="/proyectos.png"/>

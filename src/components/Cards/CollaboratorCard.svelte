@@ -1,7 +1,5 @@
 <script>
-  export let image;
-  export let name;
-  export let url;
+  let { image, name, url } = $props();
 </script>
 
 <a href="{url}">

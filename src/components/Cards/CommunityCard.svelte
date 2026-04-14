@@ -1,6 +1,5 @@
 <script>
-  export let text;
-  export let route;
+  let { text, route } = $props();
 </script>
 
 <div class="p-5 w-full md:w-1/3">

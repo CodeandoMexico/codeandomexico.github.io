@@ -9,8 +9,10 @@
 	import ArticleCard from '@/components/Cards/ArticleCard.svelte';
 	import Button from '@/components/Button.svelte';
 	import ContentCard from '@/components/Cards/ContentCard.svelte';
-	export let data
-  const { home, posts, projects } = data
+	let { data } = $props();
+	const home = $derived(data.home);
+	const posts = $derived(data.posts);
+	const projects = $derived(data.projects);
 </script>
 
 <Hero 
@@ -61,7 +63,7 @@
 </section>
 
 <section id="suscribete" class="p-5 md:p-10 mx-auto my-8">
-	<SubscribeBox color="#F1B6B8" text="¿Quieres mantenerte al tanto? Suscríbete a nuestro newsletter" subscribeForm="true" />
+	<SubscribeBox color="#F1B6B8" text="¿Quieres mantenerte al tanto? Suscríbete a nuestro newsletter" subscribeForm={true} />
 </section>
 
 <section id="blog" class="p-8 mx-auto my-8 container">

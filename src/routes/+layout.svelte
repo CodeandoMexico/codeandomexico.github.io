@@ -2,6 +2,13 @@
 	import Footer from '@/components/Footer.svelte';
 	import Navbar from '@/components/Navbar.svelte';
 	import '../app.css';
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { children } = $props();
 
 	let title = "Codeando México"
 	let description = "Tecnología cívica y datos para mejorar lo público"
@@ -19,7 +26,7 @@
 
 <Navbar />
 
-<slot />
+{@render children?.()}
 
 
 <Footer />

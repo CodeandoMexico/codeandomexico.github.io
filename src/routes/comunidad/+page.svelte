@@ -3,11 +3,17 @@
   import Hero from "@/components/Hero.svelte";
   import GetInvolvedCard from "@/components/Cards/GetInvolvedCard.svelte";
   import CommunityCard from "@/components/Cards/CommunityCard.svelte";
-  // import CollaboratorCard from "@/components/Cards/CollaboratorCard.svelte";
-  export let data
-  const { comunidad } = data
+  
+  /**
+   * @typedef {Object} Props
+   * @property {any} data - import CollaboratorCard from "@/components/Cards/CollaboratorCard.svelte";
+   */
 
-  updateMenuSelector({url: '/comunidad'})
+  /** @type {Props} */
+  let { data } = $props();
+  const comunidad = $derived(data.comunidad);
+
+  $effect(() => updateMenuSelector({url: '/comunidad'}))
 </script>
 
 <Hero accentColor="#F2D301" title="Involúcrate en la comunidad" subtitle="Somos una comunidad abierta que construye tecnología para el bien común." image="/comunidad.png" />

@@ -2,7 +2,8 @@ const interfaceElement = [
   { tags: [''] }
 ];
 
-export function getFlatArrayUnrepeated(elements = interfaceElement) {
+export function getFlatArrayUnrepeated(elements = /** @type {any[]} */ (interfaceElement)) {
+  /** @type {string[]} */
   let unrepeated = [];
   const setToLowerCase = (item = '') => item.toLowerCase();
 

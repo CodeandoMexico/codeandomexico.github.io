@@ -3,20 +3,22 @@
   import ArticleCard from "@/components/Cards/ArticleCard.svelte";
   import BlogHero from "@/components/BlogHero.svelte";
   import MenuTagsBlog from "@/components/MenuTagsBlog.svelte";
-  export let data
-  const { blog, posts, tags } = data
-  let filteredPosts = [...posts]
-  let activeTag = "todos"
+  let { data } = $props();
+  const blog = $derived(data.blog);
+  const posts = $derived(data.posts);
+  const tags = $derived(data.tags);
+  let activeTag = $state("todos");
+  const filteredPosts = $derived(
+    activeTag === "todos"
+      ? [...posts]
+      : posts.filter(post => post.tags.map((tagItem = '') => tagItem.toLowerCase()).includes(activeTag))
+  );
 
   const handleTags = (tag = "") => {
-    tag = tag.toLocaleLowerCase()
-    activeTag = tag
-    filteredPosts = tag === "todos"
-      ? [...posts]
-      : posts.filter(post => post.tags.map((tagItem = '') => tagItem.toLowerCase()).includes(tag))
+    activeTag = tag.toLocaleLowerCase();
   }
 
-  updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
+  $effect(() => updateMenuSelector({url: '/blog', color: 'text-cmxgreen'}))
 </script>
 <div class="container my-20 pt-hero mx-auto">
 

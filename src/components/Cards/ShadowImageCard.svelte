@@ -1,7 +1,13 @@
 <script>
-	export let image = '/img/photo-default.png';
-	export let title = '';
-	export let description = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [image]
+	 * @property {string} [title]
+	 * @property {string} [description]
+	 */
+
+	/** @type {Props} */
+	let { image = '/img/photo-default.png', title = '', description = '' } = $props();
 </script>
 
 <div style={`box-shadow: 7px 7px 1px black;`}>

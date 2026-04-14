@@ -2,20 +2,22 @@
   import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
   import Hero from "@/components/Hero.svelte";
   import RecursosCard from "@/components/Cards/RecursosCard.svelte";
-  export let data
-  const { conocimientos, recursos } = data
-  const categories = ['todos', 'conocimiento', ...recursos.map(recurso => recurso.categorias)]
-  let categorySelected = 'todos'
-  let resources = [...recursos]
-
-  const handleCategorySelected = (category = '') => {
-    categorySelected = category
-    resources = categorySelected === 'todos'
+  let { data } = $props();
+  const conocimientos = $derived(data.conocimientos);
+  const recursos = $derived(data.recursos);
+  const categories = $derived(['todos', 'conocimiento', ...recursos.map(recurso => recurso.categorias)]);
+  let categorySelected = $state('todos');
+  const resources = $derived(
+    categorySelected === 'todos'
       ? [...recursos]
       : recursos.filter(recurso => recurso.categorias === categorySelected)
+  );
+
+  const handleCategorySelected = (category = '') => {
+    categorySelected = category;
   }
 
-  updateMenuSelector({url: '/recursos'})
+  $effect(() => updateMenuSelector({url: '/recursos'}))
 </script>
 
 <Hero accentColor="#FF6D53" image="/recursos.png" title="Recursos" subtitle="Conocimiento que hemos construido a lo largo del tiempo sobre tecnología cívica, datos abiertos y más." />
@@ -25,7 +27,7 @@
     <a
       href={null}
       class={`uppercase font-bold inline cursor-pointer hover:underline${categorySelected === category ? ' text-cmxred' : ''}`}
-      on:click={() => handleCategorySelected(category)}
+      onclick={() => handleCategorySelected(category)}
     >{category}</a>
   {/each}
 </div>

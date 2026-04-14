@@ -1,11 +1,13 @@
 <script>
-  export let image;
-  export let image_alt;
-  export let text;
-  export let url;
-  export let label;
-  export let color;
   import Button from "../Button.svelte";
+  let {
+    image,
+    image_alt,
+    text,
+    url,
+    label,
+    color
+  } = $props();
 </script>
 
 <div class="flex flex-col justify-start gap-8 p-6">

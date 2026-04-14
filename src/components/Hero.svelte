@@ -1,12 +1,22 @@
 <script>
 	import { onMount } from 'svelte';
-	export let accentColor = '#00D690';
-	export let title = 'Tecnología cívica y datos para mejorar lo público';
-	export let subtitle =
-		'';
-	export let image = "/example.png";
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [accentColor]
+	 * @property {string} [title]
+	 * @property {string} [subtitle]
+	 * @property {string} [image]
+	 */
+
+	/** @type {Props} */
+	let {
+		accentColor = '#00D690',
+		title = 'Tecnología cívica y datos para mejorar lo público',
+		subtitle = '',
+		image = "/example.png"
+	} = $props();
 	
-	let contrastedColor = '';
+	let contrastedColor = $state('');
 
 	onMount(async () => {
 		const fontColorContrast = (await import('font-color-contrast')).default;

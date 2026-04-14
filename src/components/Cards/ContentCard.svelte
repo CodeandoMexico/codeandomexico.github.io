@@ -1,13 +1,15 @@
 <script>
-  export let title;
-  export let description;
-  export let image;
-  export let link;
+  let {
+    title,
+    description,
+    image,
+    link
+  } = $props();
 </script>
 
 
 <div class="Card w-full min-h-[519px] bg-zinc-100 flex-col justify-start items-start inline-flex">
-  <img class="Image4 self-stretch h-[238px] object-cover" src={image} />
+  <img class="Image4 self-stretch h-[238px] object-cover" src={image} alt={title} />
   <div class="Frame5 self-stretch min-h-[281px] p-8 flex-col justify-between items-start gap-4 flex">
     <div class="Heading self-stretch min-h-[41px] flex-col justify-end items-start gap-8 flex">
       <div class="Heading self-stretch text-black text-[31.25px] font-bold font-['Albert Sans'] leading-10">

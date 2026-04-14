@@ -1,12 +1,14 @@
 <script>
   import Badge from "@/components/Badge.svelte";
   import HumanDate from "../HumanDate.svelte";
-  export let slug;
-  export let title;
-  export let date;
-  export let image;
-  export let tag;
-  export let authors;
+  let {
+    slug,
+    title,
+    date,
+    image,
+    tag,
+    authors
+  } = $props();
 </script>
 
 <a href="/blog/{slug}">
@@ -21,7 +23,7 @@
       {/if}
     </div>
     <h2 class="font-extrabold text-xl">{title}</h2>
-    {#if authors }
+    {#if authors}
       <p class="text-sm">
         {#each authors as author, i }
           <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>

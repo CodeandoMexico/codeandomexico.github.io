@@ -1,18 +1,19 @@
 <script>
   import { browser } from '$app/environment';
   import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
-  import { onDestroy } from 'svelte';
   import ReadingTime from '@/components/ReadingTime.svelte';
   import HumanDate from '@/components/HumanDate.svelte';
-  export let data;
-  const { post } = data;
+  let { data } = $props();
+  const post = $derived(data.post);
   let title = '';
 
-  updateMenuSelector({url: '/blog', color: 'text-cmxgreen'})
-  if (browser) { title = document.title }
-
-  onDestroy(() => {
-    if (browser) { document.title = title }
+  $effect(() => {
+    const cleanup = updateMenuSelector({url: '/blog', color: 'text-cmxgreen'});
+    if (browser) { title = document.title }
+    return () => {
+      cleanup();
+      if (browser) { document.title = title }
+    };
   })
 </script>
 

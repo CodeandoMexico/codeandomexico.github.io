@@ -6,19 +6,7 @@
 body {
   color: #030303;
   font-weight: 400;
-  font-family: 'Albert-Sans';
-}
-
-@font-face {
-  font-family: 'Albert-Sans';
-  font-style: normal;
-  src: url('/AlbertSans-VariableFont_wght.ttf'); 
-}
-
-@font-face {
-  font-family: 'Albert-Sans';
-  font-style: italic;
-  src: url('/AlbertSans-Italic-VariableFont_wght.ttf'); 
+  font-family: 'Albert Sans', sans-serif;
 }
 
 .text-black {

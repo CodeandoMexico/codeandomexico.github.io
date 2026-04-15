@@ -42,5 +42,5 @@
 	onfocus={(e) => { e.currentTarget.style.backgroundColor = darkerColor; }}
 	onblur={(e) => { e.currentTarget.style.backgroundColor = color; }}
 >
-	<span class="Button text-base font-['Albert Sans'] uppercase leading-normal font-bold">{action_label}</span>
+	<span class="Button text-base uppercase leading-normal font-bold">{action_label}</span>
 </button>

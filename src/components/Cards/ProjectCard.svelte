@@ -29,12 +29,12 @@
   <CmsImage {assetId} alt={title} class="Image4 object-cover h-[200px] w-full" />
   <div class="Frame5 self-stretch min-h-[269px] h-full flex-col justify-start pt-3 items-start gap-4 flex">
     <div class="Heading self-stretch min-h-[84px] flex-col justify-start items-start gap-8 flex">
-      <div class="Heading self-stretch text-black text-[31.25px] font-bold font-['Albert Sans'] leading-10">
+      <div class="Heading self-stretch text-black text-[31.25px] font-bold leading-10">
         {title}
       </div>
     </div>
     <div class="Descripion self-stretch justify-start items-start inline-flex">
-      <div class="Description grow shrink basis-0 text-black text-lg font-normal font-['Albert Sans'] leading-[27px]">
+      <div class="Description grow shrink basis-0 text-black text-lg font-normal leading-[27px]">
         {description}
       </div>
     </div>

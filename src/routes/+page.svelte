@@ -75,7 +75,7 @@
 		<ArticleCard
 		slug={post.slug}
 		title={post.title}
-		tag={post.tags[0]}
+		tags={post.tags}
 		authors={post.authors}
 		date={post.date_published || post.date_created}
 		image={`https://content.codeandomexico.org/assets/${post.post_image}`}

@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="container m-auto p-3">
-		<div class="md:grid grid-cols-3 gap-x-4 gap-y-12">
+		<div class="flex flex-col gap-8 md:grid grid-cols-3 gap-x-4 gap-y-12">
 			{#each posts as post}
 				<ArticleCard
 					slug={post.slug}

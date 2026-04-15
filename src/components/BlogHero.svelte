@@ -1,104 +1,58 @@
 <script>
 	import Badge from './Badge.svelte';
-  import ReadingTime from './ReadingTime.svelte';
-  import HumanDate from './HumanDate.svelte';
-  /**
-   * @typedef {Object} Props
-   * @property {string} [tag]
-   * @property {string} [title]
-   * @property {string} [slug]
-   * @property {string} [date]
-   * @property {string} [image]
-   * @property {Array<{authors_id: {name: string}}>} [authors]
-   * @property {string} [content]
-   */
+	import ReadingTime from './ReadingTime.svelte';
+	import HumanDate from './HumanDate.svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {Array<string>} [tags]
+	 * @property {string} [title]
+	 * @property {string} [slug]
+	 * @property {string} [date]
+	 * @property {string} [image]
+	 * @property {Array<{authors_id: {name: string}}>} [authors]
+	 * @property {string} [content]
+	 */
 
-  /** @type {Props} */
-  let {
-    tag = '',
-    title = 'Blog',
-    slug = '',
-    date = '',
-    image = 'https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    authors = [],
-    content = ''
-  } = $props();
+	/** @type {Props} */
+	let {
+		tags = [],
+		title = 'Blog',
+		slug = '',
+		date = '',
+		image = '',
+		authors = [],
+		content = ''
+	} = $props();
 </script>
 
-<a href="/blog/{slug}">
-<div class="h-[400px] relative ">
-	<div
-		class="
-    group
-    absolute
-    w-full
-    h-full
-    top-0
-    left-0
-    right-0
-    bottom-0
-   bg-black
-   opacity-50
-    z-10
-    flex
-  "
-	></div>
-
-	<div
-		class="
-      absolute
-      w-full
-      h-full
-      top-0
-      left-0
-      right-0
-      bottom-0
-      z-20
-      flex
-      flex-col
-      justify-center
-      p-10"
-	>
-		<div class="left">
-			{#if tag}
-				<Badge text={tag} />
-			{/if}
-		</div>
-		<h1 class="text-2xl md:text-4xl font-bold text-white md:leading-normal group:hover:underline  ">
-			{title}
+<div class="hero flex gap-2 md:gap-4 flex-col md:flex-row">
+	<div class="hero_left aspect-16/9 border border-cmxblack border-2">
+		<img src={image} alt="" class="" />
+	</div>
+	<div class="hero_right flex flex-col gap-4">
+		<div></div>
+		<h1 class="text-2xl md:text-4xl font-black text-cmxblack leading-1 hover:underline">
+			<a href="/blog/{slug}">{title}</a>
 		</h1>
-	</div>
-
-	<div
-		class="
-      absolute
-      w-full
-      h-full
-      top-0
-      left-0
-      right-0
-      bottom-0
-      z-30
-      flex
-      flex-col
-      justify-end
-      p-10
-    "
-	>
-		<div class="bottom-0">
-			<p class="text-2xl text-left text-white font-thin">
-        {#each authors as author, i}
-          <span>{author.authors_id.name || ''}{#if i < (authors.length-1)}, {/if}</span>
-        {/each}
-      </p>
-      <p class="text-left text-gray-300 font-bold">
-        <HumanDate date={date}/>
-        <span class="mx-2">·</span>
-        <ReadingTime text={content}/>
-      </p>
+		<div class="">
+			<p class="text-md font-semibold">
+				{#each authors as author, i}
+					<span
+						>{author.authors_id.name || ''}{#if i < authors.length - 1},
+						{/if}</span
+					>
+				{/each}
+			</p>
+			<p class="text-sm">
+				<HumanDate {date} />
+				<span class="mx-2">•</span>
+				<ReadingTime text={content} />
+			</p>
+		</div>
+		<div class="flex flex-row gap-1">
+			{#each tags as tag}
+				<Badge text={tag} />
+			{/each}
 		</div>
 	</div>
-
-	<img class="object-cover w-full h-full" src={image} alt="Hero" />
 </div>
-</a>

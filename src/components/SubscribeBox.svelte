@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	/** @type {{ color: string, text: string, subscribeForm?: boolean }} */
 	let { color, text, subscribeForm = false } = $props();
 
@@ -11,11 +12,20 @@
 	// Spam prevention variables
 	let formStartTime = Date.now();
 	let turnstileResponse = '';
+	/** @type {string | null} */
 	let turnstileWidgetId = null;
 	let isTurnstileLoaded = false;
 
+	/** @returns {boolean} */
+	function isFormTooFast() {
+		return Date.now() - formStartTime < 3000;
+	}
+
+	/** @type {any} */
+	const win = typeof window !== 'undefined' ? window : null;
+
 	onMount(() => {
-		if (!window.turnstile) {
+		if (!win.turnstile) {
 			console.log('Cargando script de Turnstile...');
 			const script = document.createElement('script');
 			script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
@@ -42,15 +52,15 @@
 	// Widget para el Captcha de Cloudflare Turnstile
 	function initTurnstile() {
 		console.log('Intentando inicializar Turnstile...');
-		console.log('window.turnstile:', window.turnstile);
+		console.log('window.turnstile:', win.turnstile);
 		console.log('isTurnstileLoaded:', isTurnstileLoaded);
 
-		if (window.turnstile && isTurnstileLoaded) {
+		if (win.turnstile && isTurnstileLoaded) {
 			try {
 				console.log('Renderizando widget de Turnstile...');
-				turnstileWidgetId = window.turnstile.render('#turnstile-container', {
+				turnstileWidgetId = win.turnstile.render('#turnstile-container', {
 					sitekey: '0x4AAAAAAB6c7nCtT4Pnd6ZP',
-					callback: function (token) {
+					callback: function (/** @type {string} */ token) {
 						console.log('Callback de Turnstile recibido:', token);
 						turnstileResponse = token;
 					},
@@ -58,7 +68,7 @@
 						console.log('Turnstile caducado');
 						turnstileResponse = '';
 					},
-					'error-callback': function (error) {
+					'error-callback': function (/** @type {string} */ error) {
 						console.error('Error de Turnstile:', error);
 						turnstileResponse = '';
 					}
@@ -73,11 +83,11 @@
 	}
 
 	// Validate form submission
-	function validateForm(event) {
-		const target = event.target;
+	function validateForm(/** @type {SubmitEvent} */ event) {
+		const target = /** @type {HTMLFormElement} */ (event.target);
 
 		// Check honeypot field
-		const honeypot = target.querySelector('input[name="website"]');
+		const honeypot = /** @type {HTMLInputElement | null} */ (target.querySelector('input[name="website"]'));
 		if (honeypot && honeypot.value !== '') {
 			event.preventDefault();
 			console.log('Bot detectado: campo honeypot llenado');
@@ -132,7 +142,6 @@
 				{@html text}
 			</p>
 		</div>
-		{#if subscribeForm}
 		{#if subscribeForm}
 			<div class="flex justify-center mx-auto my-3">
 				<form class="w-full max-w-sm validate" action={breveo_url} method="post" id="newsletter-form" target="_blank" >

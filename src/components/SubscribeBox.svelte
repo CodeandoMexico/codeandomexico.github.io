@@ -87,7 +87,9 @@
 		const target = /** @type {HTMLFormElement} */ (event.target);
 
 		// Check honeypot field
-		const honeypot = /** @type {HTMLInputElement | null} */ (target.querySelector('input[name="website"]'));
+		const honeypot = /** @type {HTMLInputElement | null} */ (
+			target.querySelector('input[name="website"]')
+		);
 		if (honeypot && honeypot.value !== '') {
 			event.preventDefault();
 			console.log('Bot detectado: campo honeypot llenado');
@@ -136,7 +138,7 @@
 >
 	<div class="Frame52 w-full flex-col justify-center items-center md:p-5">
 		<div
-			class="text-center text-black text-2xl md:text-5xl font-bold font-['Albert Sans'] md:leading-[63.44px] md:p-5 text-wrap"
+			class="text-center text-black text-2xl md:text-5xl font-bold md:leading-[63.44px] md:p-5 text-wrap"
 		>
 			<p>
 				{@html text}
@@ -144,9 +146,24 @@
 		</div>
 		{#if subscribeForm}
 			<div class="flex justify-center mx-auto my-3">
-				<form class="w-full max-w-sm validate" action={breveo_url} method="post" id="newsletter-form" target="_blank" >
+				<form
+					class="w-full max-w-sm validate"
+					action={breveo_url}
+					method="post"
+					id="newsletter-form"
+					target="_blank"
+				>
 					<div class="flex items-center">
-						<input class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none" placeholder="correo@ejemplo.org" aria-label="Full name" type="email" name="EMAIL" required value="" pattern={regex}>
+						<input
+							class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none"
+							placeholder="correo@ejemplo.org"
+							aria-label="Full name"
+							type="email"
+							name="EMAIL"
+							required
+							value=""
+							pattern={regex}
+						/>
 						<div style="position: absolute; left: -5000px;" aria-hidden="true">
 							<input
 								type="text"
@@ -157,8 +174,12 @@
 							<input type="text" name="website" tabindex="-1" value="" autocomplete="off" />
 							<input type="hidden" name="form_time" value={formStartTime} />
 						</div>
-						<button aria-label="Suscribirme" class="flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold font-['Albert Sans'] uppercase leading-normal" type="button">
-							<input type="submit" name="subscribe" class="button uppercase" value="Suscribirme">
+						<button
+							aria-label="Suscribirme"
+							class="flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold uppercase leading-normal"
+							type="button"
+						>
+							<input type="submit" name="subscribe" class="button uppercase" value="Suscribirme" />
 						</button>
 					</div>
 				</form>

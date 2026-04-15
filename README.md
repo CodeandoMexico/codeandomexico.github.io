@@ -1,28 +1,69 @@
-# Sveltekit starter
+# Página Web de Codeando México
 
-A sveltekit scaffolding repository, it comes with our base stack for webaps:
+Sitio web oficial de [Codeando México](https://codeandomexico.org), una organización sin fines de lucro que durante más de 10 años ha colaborado con gobiernos, asociaciones civiles, periodistas y voluntarias para fortalecer el impacto de personas, equipos e instituciones en el espacio público a través de proyectos de tecnología y datos.
 
-- [Seveltekit](https://kit.svelte.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
-- Eslint + Prettier
+## Stack
 
-## Requirements
+- [SvelteKit](https://kit.svelte.dev) + [Svelte 5](https://svelte.dev)
+- [Tailwind CSS](https://tailwindcss.com) + [DaisyUI](https://daisyui.com)
+- [Directus](https://directus.io) como CMS headless
+- Desplegado en GitHub Pages como sitio estático
 
-- [PNPM](https://pnpm.io/es/)
+## Desarrollo local
 
-## Intalling
+### Requisitos
 
-Instead of forking or pulling this record use [degit](https://github.com/Rich-Harris/degit)
+- [Node.js](https://nodejs.org) 24+
+- [pnpm](https://pnpm.io)
 
-1. Install degit (if not previously installed)
+### Instalación
 
-`pnpm add -g degit`
+```bash
+pnpm install
+```
 
-2. Pull the project to your current folder
+### Variables de entorno
 
-`degit bekindsoft/sveltekit_starter`
+Crea un archivo `.env` en la raíz del proyecto:
 
-3. Ready to go, just `pnpm install` and `pnpm run dev` as usual
+```env
+DIRECTUS_TOKEN=tu_token_de_directus
+```
 
+El token se usa para obtener contenido del CMS (blog, proyectos, recursos). Sin él, el build fallará.
 
+### Comandos
+
+```bash
+# Servidor de desarrollo
+pnpm dev
+
+# Build de producción (incluye descarga de imágenes del CMS)
+pnpm build
+
+# Solo descargar imágenes del CMS
+pnpm prebuild-images
+
+# Verificar tipos
+pnpm check
+```
+
+## Cómo colaborar
+
+¡Las contribuciones son bienvenidas! Puedes ayudar de las siguientes formas:
+
+- **Reportar bugs** — Abre un [issue](https://github.com/codeandomexico/codeandomexico.github.io/issues) describiendo el problema
+- **Proponer mejoras** — Abre un issue con tu propuesta antes de empezar a desarrollar
+- **Enviar un pull request** — Haz fork del repo, crea una rama con tu cambio y abre un PR hacia `main`
+
+### Guía de estilo
+
+- Componentes Svelte en `PascalCase`
+- Módulos TypeScript (utils, servicios, stores) en `camelCase`
+- Estilos con Tailwind CSS; evitar CSS repetido
+- ódigo en inglés
+- Sintaxis de Svelte 5 (no Svelte 4)
+
+## Licencia
+
+GNU Affero General Public License v3.0

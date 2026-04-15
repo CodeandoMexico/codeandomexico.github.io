@@ -25,7 +25,7 @@
 </script>
 
 <div class="container my-20 pt-hero mx-auto">
-	<div class="container m-auto px-3">
+	<div class="container m-auto px-3 mb-8">
 		<div class="my-7">
 			<h1 class="text-5xl text-cmxgreen font-bold">Blog</h1>
 		</div>
@@ -39,11 +39,8 @@
 			content={highlightedPost.content}
 		/>
 	</div>
-	<div class="container mx-auto px-3 pt-16 pb-12 text-center">
-		<MenuTagsBlog {activeTag} {handleTags} {tags} />
-	</div>
 	<div class="container m-auto p-3">
-		<div class="md:grid grid-cols-3 gap-5">
+		<div class="md:grid grid-cols-3 gap-x-4 gap-y-12">
 			{#each filteredPosts as post}
 				<ArticleCard
 					slug={post.slug}

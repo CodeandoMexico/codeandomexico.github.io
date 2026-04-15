@@ -8,6 +8,8 @@
 	let { text = 'Badge' } = $props();
 </script>
 
-<span class="rounded-full px-3 py-1 text-xs bg-cmxblack text-white whitespace-nowrap">
-	{text}
+<span
+	class="rounded-full px-3 py-1 text-xs bg-cmxblack text-white whitespace-nowrap hover:bg-cmxgreen"
+>
+	<a href="/blog/tag/{text}">{text}</a>
 </span>

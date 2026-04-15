@@ -11,5 +11,5 @@ export function getFlatArrayUnrepeated(elements = /** @type {any[]} */ (interfac
     unrepeated = [...new Set([...unrepeated, ...new Set(item?.tags?.map(setToLowerCase))])]
   })
 
-  return unrepeated;
+  return unrepeated.sort();
 }

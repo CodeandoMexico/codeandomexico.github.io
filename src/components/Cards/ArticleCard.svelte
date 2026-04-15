@@ -1,13 +1,14 @@
 <script>
 	import Badge from '@/components/Badge.svelte';
 	import HumanDate from '../HumanDate.svelte';
-	let { slug, title, date, image, tags, authors } = $props();
+	import CmsImage from '@/components/CmsImage.svelte';
+	let { slug, title, date, assetId, tags, authors } = $props();
 </script>
 
 <div class="w-full">
 	<div class="md:aspect-video aspect-square mb-4 border border-cmxblack border-1">
 		<a href="/blog/{slug}">
-			<img class="object-cover w-full h-full" src={image} alt="Card" />
+			<CmsImage {assetId} alt="Card" class="object-cover w-full h-full" />
 		</a>
 	</div>
 	<div class="space-y-2 flex flex-col gap-2">

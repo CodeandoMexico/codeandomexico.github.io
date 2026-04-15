@@ -49,7 +49,7 @@
 		<ContentCard
 			title={project.title}
 			description={project.short_description}
-			image={`https://content.codeandomexico.org/assets/${project.image}`}
+			assetId={project.image}
 			link={project.website} />
 	{/each}
 
@@ -78,7 +78,7 @@
 		tags={post.tags}
 		authors={post.authors}
 		date={post.date_published || post.date_created}
-		image={`https://content.codeandomexico.org/assets/${post.post_image}`}
+		assetId={post.post_image}
 		/>
 		{/each}
 	</div>

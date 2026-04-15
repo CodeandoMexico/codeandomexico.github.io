@@ -62,7 +62,7 @@
         title={project.title}
         description={project.short_description}
         tags={project.tags || []}
-        image={`https://content.codeandomexico.org/assets/${project.image}`}
+        assetId={project.image}
         website={project.website}
         maker={project.maker}
         repository={project.repository}

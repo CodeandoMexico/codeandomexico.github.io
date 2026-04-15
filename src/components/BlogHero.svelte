@@ -2,13 +2,14 @@
 	import Badge from './Badge.svelte';
 	import ReadingTime from './ReadingTime.svelte';
 	import HumanDate from './HumanDate.svelte';
+	import CmsImage from '@/components/CmsImage.svelte';
 	/**
 	 * @typedef {Object} Props
 	 * @property {Array<string>} [tags]
 	 * @property {string} [title]
 	 * @property {string} [slug]
 	 * @property {string} [date]
-	 * @property {string} [image]
+	 * @property {string} [assetId]
 	 * @property {Array<{authors_id: {name: string}}>} [authors]
 	 * @property {string} [content]
 	 */
@@ -19,7 +20,7 @@
 		title = 'Blog',
 		slug = '',
 		date = '',
-		image = '',
+		assetId = '',
 		authors = [],
 		content = ''
 	} = $props();
@@ -27,7 +28,7 @@
 
 <div class="hero flex gap-2 md:gap-4 flex-col md:flex-row">
 	<div class="hero_left aspect-16/9 border border-cmxblack border-2">
-		<img src={image} alt="" class="" />
+		<CmsImage {assetId} alt="" class="" />
 	</div>
 	<div class="hero_right flex flex-col gap-4">
 		<div></div>

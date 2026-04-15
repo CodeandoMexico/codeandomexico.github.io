@@ -43,7 +43,7 @@
 					tags={post.tags}
 					authors={post.authors}
 					date={post.date_published || post.date_created}
-					image={`https://content.codeandomexico.org/assets/${post.post_image}`}
+					assetId={post.post_image}
 				/>
 			{/each}
 		</div>

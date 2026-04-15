@@ -34,7 +34,7 @@
 			title={highlightedPost.title}
 			tags={highlightedPost.tags}
 			date={highlightedPost.date_published || highlightedPost.date_created}
-			image={`https://content.codeandomexico.org/assets/${highlightedPost.post_image}`}
+			assetId={highlightedPost.post_image}
 			authors={highlightedPost.authors}
 			content={highlightedPost.content}
 		/>
@@ -48,7 +48,7 @@
 					tags={post.tags}
 					authors={post.authors}
 					date={post.date_published || post.date_created}
-					image={`https://content.codeandomexico.org/assets/${post.post_image}`}
+					assetId={post.post_image}
 				/>
 			{/each}
 		</div>

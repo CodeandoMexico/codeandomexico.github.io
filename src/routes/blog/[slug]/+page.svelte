@@ -3,6 +3,7 @@
 	import { updateMenuSelector } from '@/lib/menuSelectorUpdater.js';
 	import ReadingTime from '@/components/ReadingTime.svelte';
 	import HumanDate from '@/components/HumanDate.svelte';
+	import CmsImage from '@/components/CmsImage.svelte';
 	let { data } = $props();
 	const post = $derived(data.post);
 	let title = '';
@@ -53,8 +54,8 @@
 			<ReadingTime text={post.content} />
 		</p>
 	</div>
-	<img
-		src={`https://content.codeandomexico.org/assets/${post.post_image}`}
+	<CmsImage
+		assetId={post.post_image}
 		alt="Imagen de blog"
 		class="w-full max-h-[450px] object-cover mb-8"
 	/>

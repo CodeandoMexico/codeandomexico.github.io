@@ -8,9 +8,10 @@
   const categories = $derived(['todos', 'conocimiento', ...recursos.map(recurso => recurso.categorias)]);
   let categorySelected = $state('todos');
   const resources = $derived(
-    categorySelected === 'todos'
+    (categorySelected === 'todos'
       ? [...recursos]
       : recursos.filter(recurso => recurso.categorias === categorySelected)
+    ).filter(recurso => recurso.recursos?.length > 0)
   );
 
   const handleCategorySelected = (category = '') => {

@@ -61,7 +61,7 @@ pnpm check
 - Componentes Svelte en `PascalCase`
 - Módulos TypeScript (utils, servicios, stores) en `camelCase`
 - Estilos con Tailwind CSS; evitar CSS repetido
-- ódigo en inglés
+- Código en inglés
 - Sintaxis de Svelte 5 (no Svelte 4)
 
 ## Licencia

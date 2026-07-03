@@ -19,21 +19,21 @@
 					class="Frame8 p-2 bg-neutral-50 rounded-[45px] flex-col justify-start items-start gap-px inline-flex"
 				>
 					<a href="https://x.com/CodeandoMexico/" target="_blank" rel="noopener noreferrer"
-						><img src="/x.svg" alt="X logo" srcset="" /></a
+						><img src="/x.svg" alt="X (twitter)" srcset="" /></a
 					>
 				</div>
 				<div
 					class="Frame9 p-2 bg-neutral-50 rounded-[45px] flex-col justify-start items-start gap-px inline-flex"
 				>
 					<a href="https://github.com/CodeandoMexico/" target="_blank" rel="noopener noreferrer"
-						><img src="/github.svg" alt="X logo" srcset="" /></a
+						><img src="/github.svg" alt="Github" srcset="" /></a
 					>
 				</div>
 				<div
 					class="Frame10 p-2 bg-neutral-50 rounded-[45px] flex-col justify-start items-start gap-px inline-flex"
 				>
 					<a href="https://codeandomexico.slack.com/" target="_blank" rel="noopener noreferrer"
-						><img src="/slack.svg" alt="X logo" srcset="" /></a
+						><img src="/slack.svg" alt="Slack" srcset="" /></a
 					>
 				</div>
 			</div>

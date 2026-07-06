@@ -155,7 +155,7 @@
 				>
 					<div class="flex items-center">
 						<input
-							class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none"
+							class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-black"
 							placeholder="correo@ejemplo.org"
 							aria-label="Correo electrónico"
 							type="email"
@@ -176,7 +176,7 @@
 							<input type="hidden" name="form_time" value={formStartTime} />
 						</div>
 						<button
-							class="button uppercase flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold uppercase leading-normal"
+							class="button uppercase flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold uppercase leading-normal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-black"
 							type="submit"
 						>
 							Suscribirme

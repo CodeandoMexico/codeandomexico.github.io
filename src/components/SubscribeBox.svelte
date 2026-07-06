@@ -157,7 +157,7 @@
 						<input
 							class="appearance-none border-none w-full text-gray-700 px-4 py-3 rounded-tl-3xl rounded-bl-3xl border-zinc-300 leading-tight focus:outline-none"
 							placeholder="correo@ejemplo.org"
-							aria-label="Full name"
+							aria-label="Correo electrónico"
 							type="email"
 							name="EMAIL"
 							required
@@ -170,16 +170,16 @@
 								name="b_6a37b9b668c1da15bcc718fa4_203574be23"
 								tabindex="-1"
 								value=""
+								aria-label="b"
 							/>
-							<input type="text" name="website" tabindex="-1" value="" autocomplete="off" />
+							<input type="text" name="website" tabindex="-1" value="" autocomplete="off" aria-label="w"/>
 							<input type="hidden" name="form_time" value={formStartTime} />
 						</div>
 						<button
-							aria-label="Suscribirme"
-							class="flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold uppercase leading-normal"
-							type="button"
+							class="button uppercase flex-shrink-0 px-5 py-2 bg-black rounded-tr-3xl h-11 rounded-br-3xl text-sm border border-black text-white rounded text-base font-bold uppercase leading-normal"
+							type="submit"
 						>
-							<input type="submit" name="subscribe" class="button uppercase" value="Suscribirme" />
+							Suscribirme
 						</button>
 					</div>
 				</form>

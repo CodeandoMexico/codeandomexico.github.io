@@ -1,6 +1,5 @@
 <script>
-	import Button from '@/components/Button.svelte';
-	import ShadowImage from '@/components/ShadowImage.svelte';
+	import LinkLikeButton from './LinkLikeButton.svelte';
 	let {
 		icon,
 		title,
@@ -11,8 +10,7 @@
 </script>
 
 <div class="space-y-5">
-	<img src={icon} alt="Icon" class="" />
-
+	<img src={icon} alt="" />
 	<h2 class="text-3xl font-bold">{title}</h2>
 	{#if description}
 	<p class="max-w-[550px] min-h-[90px] text-xl">
@@ -21,10 +19,7 @@
 	{/if }
 	{#if action}
 	<div class="my-3">
-
-		<a href={action}>
-			<Button action_label={action_label} />
-		</a>
+		<LinkLikeButton go_to={action} action_label={action_label} />
 	</div>
 	{/if }
 </div>

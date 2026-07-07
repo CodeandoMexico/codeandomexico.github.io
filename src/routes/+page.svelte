@@ -7,7 +7,7 @@
 	import ProjectCard from '@/components/Cards/ProjectCard.svelte';
 	import SubscribeBox from '@/components/SubscribeBox.svelte';
 	import ArticleCard from '@/components/Cards/ArticleCard.svelte';
-	import Button from '@/components/Button.svelte';
+	import LinkLikeButton from '@/components/LinkLikeButton.svelte';
 	import ContentCard from '@/components/Cards/ContentCard.svelte';
 	let { data } = $props();
 	const home = $derived(data.home);
@@ -22,9 +22,8 @@
 
 <div id="quienes-somos" class="container px-5 mx-auto my-8">
 	<div class="flex-col md:flex-row flex my-10 gap-20 items-center">
-		<ShadowImage />
+		<ShadowImage alt="Reunion del equipo de Codeando México"/>
 		<div class="w-5/6 p-6">
-
 			<TitleDescription title={home.about_title} description={home.about_subtitle} />
 		</div>
 	</div>
@@ -55,10 +54,7 @@
 
 	</div>
 	<div class="text-center my-8 max-w-1/2">
-		<a href="/proyectos" >	
-			<Button  action_label="Ver todos los proyectos" />
-		</a>
-		
+		<LinkLikeButton go_to="/proyectos" action_label="Ver todos los proyectos" />
 	</div>
 </section>
 
@@ -83,8 +79,6 @@
 		{/each}
 	</div>
 	<div class="text-center m-auto">
-		<a href="/blog">
-			<Button action_label="Ir al blog" />
-		</a>
+		<LinkLikeButton go_to="/blog" action_label="Ir al blog" />
 	</div>
 </section>

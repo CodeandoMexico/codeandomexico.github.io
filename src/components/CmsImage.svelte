@@ -13,5 +13,5 @@
 			sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
 		/>
 	{/if}
-	<img src={imageData.src} {alt} loading="lazy" {...rest} />
+	<img src={imageData.src} alt={alt} loading="lazy" {...rest} />
 </picture>

@@ -4,7 +4,7 @@
 </script>
 
 <div class="Card w-full min-h-[519px] bg-zinc-100 flex-col justify-start items-start inline-flex">
-	<CmsImage {assetId} alt={title} class="Image4 self-stretch h-[238px] object-cover" />
+	<CmsImage {assetId} alt="" class="Image4 self-stretch h-[238px] object-cover" />
 	<div
 		class="Frame5 self-stretch min-h-[281px] p-8 flex-col justify-between items-start gap-4 flex"
 	>
@@ -23,11 +23,12 @@
 				href={link}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="ConoceMS text-black text-base font-bold uppercase leading-normal hover:underline"
+				class="text-black text-base font-bold uppercase leading-normal hover:underline focus:outline focus:outline-cmxgreen focus:outline-2 focus:outline-offset-2"
 			>
-				Conoce más
-				<img class="ExternalLink w-5 h-5 inline align-sub ml-1" src="/Vector.svg" alt="flecha" /></a
-			>
+				<span aria-hidden="true">Conoce más</span>
+				<span class="sr-only">Visita el sitio de {title}.</span>
+				<img class="w-5 h-5 inline align-sub ml-1" src="/Vector.svg" alt="" title="Se abre en nueva pestaña"/>
+			</a>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,10 @@
 # Página Web de Codeando México
 
-Sitio web oficial de [Codeando México](https://codeandomexico.org), una organización sin fines de lucro que durante más de 10 años ha colaborado con gobiernos, asociaciones civiles, periodistas y voluntarias para fortalecer el impacto de personas, equipos e instituciones en el espacio público a través de proyectos de tecnología y datos.
+Sitio web oficial de [Codeando México](https://codeandomexico.org), una
+organización sin fines de lucro que durante más de 10 años ha colaborado con
+gobiernos, asociaciones civiles, periodistas y voluntarias para fortalecer el
+impacto de personas, equipos e instituciones en el espacio público a través de
+proyectos de tecnología y datos.
 
 ## Stack
 
@@ -30,7 +34,8 @@ Crea un archivo `.env` en la raíz del proyecto:
 DIRECTUS_TOKEN=tu_token_de_directus
 ```
 
-El token se usa para obtener contenido del CMS (blog, proyectos, recursos). Sin él, el build fallará.
+El token se usa para obtener contenido del CMS (blog, proyectos, recursos). Sin
+él, el build fallará.
 
 ### Comandos
 
@@ -52,9 +57,13 @@ pnpm check
 
 ¡Las contribuciones son bienvenidas! Puedes ayudar de las siguientes formas:
 
-- **Reportar bugs** — Abre un [issue](https://github.com/codeandomexico/codeandomexico.github.io/issues) describiendo el problema
-- **Proponer mejoras** — Abre un issue con tu propuesta antes de empezar a desarrollar
-- **Enviar un pull request** — Haz fork del repo, crea una rama con tu cambio y abre un PR hacia `main`
+- **Reportar bugs** — Abre un
+  [issue](https://github.com/codeandomexico/codeandomexico.github.io/issues)
+  describiendo el problema
+- **Proponer mejoras** — Abre un issue con tu propuesta antes de empezar a
+  desarrollar
+- **Enviar un pull request** — Haz fork del repo, crea una rama con tu cambio y
+  abre un PR hacia `main`
 
 ### Guía de estilo
 

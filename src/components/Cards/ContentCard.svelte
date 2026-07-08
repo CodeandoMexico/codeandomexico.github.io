@@ -1,6 +1,7 @@
 <script>
 	import CmsImage from '@/components/CmsImage.svelte';
 	let { title, description, assetId, link } = $props();
+	import ExternalLinkIcon from "@/components/Icon/ExternalLink.svelte";
 </script>
 
 <div class="Card w-full min-h-[519px] bg-zinc-100 flex-col justify-start items-start inline-flex">
@@ -10,7 +11,7 @@
 	>
 		<div class="Heading self-stretch min-h-[41px] flex-col justify-end items-start gap-8 flex">
 			<div class="Heading self-stretch text-black text-[31.25px] font-bold leading-10">
-				{title}
+				<h3>{title}</h3>
 			</div>
 		</div>
 		<div class="Descripion self-stretch justify-start items-start inline-flex">
@@ -27,7 +28,7 @@
 			>
 				<span aria-hidden="true">Conoce más</span>
 				<span class="sr-only">Visita el sitio de {title}.</span>
-				<img class="w-5 h-5 inline align-sub ml-1" src="/Vector.svg" alt="" title="Se abre en nueva pestaña"/>
+				<ExternalLinkIcon />
 			</a>
 		</div>
 	</div>

@@ -1,8 +1,9 @@
 <script>
+	import ExternalLinkIcon from "@/components/Icon/ExternalLink.svelte";
 	import { fontColorContrast } from '$lib/fontColorContrast.js';
 
-	/** @type {{ go_to: string, action_label: string, color?: string }} */
-	let { go_to = '', action_label, color = "#00D690" } = $props();
+	/** @type {{ go_to: string, action_label: string, color?: string, external?: boolean }} */
+	let { go_to = '', action_label, color = "#00D690", external = false } = $props();
 
 	const labelColor = $derived(fontColorContrast(color));
 
@@ -75,4 +76,9 @@
 	}}
 >
 	{action_label}
+	{#if external}
+		<span class="inline self-center ml-2">
+			<ExternalLinkIcon />
+		</span>
+	{/if}
 </a>

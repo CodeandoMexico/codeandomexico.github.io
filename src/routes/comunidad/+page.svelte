@@ -28,7 +28,7 @@
 
 <section class="container mx-auto">
   <div class="mx-auto md:w-1/2 p-3 my-8">
-    <h1 class="text-5xl font-bold my-10 text-center">Comienza a participar</h1>
+    <h2 class="text-5xl font-bold my-10 text-center">Comienza a participar</h2>
     <p class="text-center md:text-left text-lg">¿Quieres participar pero no sabes por dónde comenzar? Este es un espacio abierto y tenemos un lugar para todas las personas. Empieza por aquí:</p>
   </div>
   <div class="my-10 flex flex-column md:flex-row flex-wrap">

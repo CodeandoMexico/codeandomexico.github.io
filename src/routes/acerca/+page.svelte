@@ -1,4 +1,5 @@
 <script>
+  import ExternalLinkIcon from "@/components/Icon/ExternalLink.svelte";
   import { updateMenuSelector } from '@/lib/menuSelectorUpdater';
   import Hero from '@/components/Hero.svelte';
   import IconTextAction from '@/components/IconTextAction.svelte';
@@ -24,11 +25,15 @@
     <img src="/acerca-comunidad.png" alt="Comunidad de codeando" class="m-auto drop-shadow-full">
   </div>
   <div class="flex flex-col md:flex-row my-10 gap-20 py-16 items-start md:w-2/3 m-auto">
-    <img src="/cfall-logo.png" alt="Logo de Code for">
+    <img src="/cfall-logo.png" alt="Code for All, global network">
     <div>
       <p>Formamos parte de Code for All, una red internacional de agentes de cambio de tecnología cívica compuesta por 31 organizaciones de todo el mundo. Hemos trabajado de la mano con Code for Australia, Code for Romania, Code for Pakistan, Open Knowledge Brasil y otras organizaciones en proyectos con impacto en toda la región.</p>
       <div class="my-3">
-        <a href="https://codeforall.org/" target="_blank" class="uppercase font-semibold hover:underline">Ir al sitio <img src="/flecha.png" alt="flecha" class="inline ml-2"></a>
+        <a href="https://codeforall.org/" target="_blank" class="uppercase font-semibold hover:underline focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-cmxblue">
+          Ir al sitio 
+          <span class="sr-only">de Code for All.</span>
+          <ExternalLinkIcon />
+        </a>
       </div>
     </div>
   </div>

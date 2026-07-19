@@ -44,7 +44,7 @@
         <h3 class="text-3xl font-bold my-5">{subseccion.name}</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-5 mb-10">
           {#each subseccion.recursos as item }
-            <RecursosCard subtitle={item.title} url={item.url} authors={item.authors}/>
+            <RecursosCard title={item.title} headingLevel="h4" url={item.url} authors={item.authors}/>
           {/each}
         </div>
       </div>
@@ -59,7 +59,7 @@
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-5 mb-10">
       {#each resource.recursos as recurso}
-        <RecursosCard title={recurso.name} url={recurso.url}/>
+        <RecursosCard title={recurso.name} headingLevel="h3" url={recurso.url}/>
       {/each}
     </div>
   </section>

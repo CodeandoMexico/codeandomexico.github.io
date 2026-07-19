@@ -16,9 +16,9 @@
 
   </div>
   <div class="flex flex-col md:flex-row my-10 gap-28 md:p-10 justify-center">
-    <IconTextAction icon="/acerca-1.png" title="Desarrollamos habilidades"/>
-    <IconTextAction icon="/acerca-2.png" title="Acompañamos equipos"/>
-    <IconTextAction icon="/acerca-3.png" title="Construimos herramientas"/>
+    <IconTextAction icon="/acerca-1.png" title="Desarrollamos habilidades" headingLevel="h2"/>
+    <IconTextAction icon="/acerca-2.png" title="Acompañamos equipos" headingLevel="h2"/>
+    <IconTextAction icon="/acerca-3.png" title="Construimos herramientas" headingLevel="h2"/>
   </div>
 
   <div class="text-center py-14 my-14">

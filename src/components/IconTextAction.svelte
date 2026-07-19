@@ -3,7 +3,7 @@
 	let {
 		icon,
 		title = '',
-		subtitle = '',
+		headingLevel = '',
 		description = '',
 		action = '',
 		action_label = ''
@@ -12,12 +12,13 @@
 
 <div class="space-y-5">
 	<img src={icon} alt="" />
-	{#if title}
+	{#if headingLevel === 'h2'}
 		<h2 class="text-3xl font-bold">{title}</h2>
-	{/if }
-	{#if subtitle}
-		<h3 class="text-3xl font-bold">{subtitle}</h3>
-	{/if }
+	{:else if headingLevel === 'h3'}
+		<h3 class="text-3xl font-bold">{title}</h3>
+	{:else}
+		<p>{title}</p>
+	{/if}
 	{#if description}
 		<p class="max-w-[550px] min-h-[90px] text-xl">
 			{description}

@@ -18,17 +18,17 @@
 <div class="container my-20 pt-hero mx-auto">
 	<div class="container m-auto px-3">
 		<div class="my-7">
-			<a href="/blog" class="text-sm text-gray-500 hover:underline">← Blog</a>
+			<a href="/blog" class="text-sm text-gray-500 hover:underline focus:outline focus:outline-cmxgreen focus:outline-2 focus:outline-offset-2">← Blog</a>
 			<h1 class="text-5xl text-cmxgreen font-bold mt-2">
 				Tag: <span class="capitalize">{tag}</span>
 			</h1>
 		</div>
 	</div>
 
-	<div class="container mx-auto px-3 pt-16 pb-12 text-center">
-		<a href="/blog" class="tag-link">TODOS</a>
+	<div class="container mx-auto px-3 pt-16 pb-12 flex flex-wrap gap-x-5 gap-y-3 justify-center">
+		<a href="/blog" class="whitespace-nowrap font-bold hover:underline focus:outline focus:outline-cmxgreen focus:outline-2 focus:outline-offset-2">TODOS</a>
 		{#each allTags as t}
-			<a href="/blog/tag/{t}" class="tag-link {t === tag ? 'text-cmxgreen' : ''}">
+			<a href="/blog/tag/{t}" class="whitespace-nowrap font-bold hover:underline focus:outline focus:outline-cmxgreen focus:outline-2 focus:outline-offset-2 {t === tag ? 'text-cmxgreen' : ''}">
 				{t.toUpperCase()}
 			</a>
 		{/each}
@@ -40,6 +40,7 @@
 				<ArticleCard
 					slug={post.slug}
 					title={post.title}
+					headingLevel='h2'
 					tags={post.tags}
 					authors={post.authors}
 					date={post.date_published || post.date_created}
@@ -49,16 +50,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.tag-link {
-		display: inline-block;
-		font-weight: 700;
-		line-height: 2.5;
-		padding-right: 15px;
-	}
-	.tag-link:hover {
-		cursor: pointer;
-		text-decoration: underline;
-	}
-</style>

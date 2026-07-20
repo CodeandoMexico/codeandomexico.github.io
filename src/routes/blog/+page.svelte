@@ -45,6 +45,7 @@
 				<ArticleCard
 					slug={post.slug}
 					title={post.title}
+					headingLevel='h2'
 					tags={post.tags}
 					authors={post.authors}
 					date={post.date_published || post.date_created}

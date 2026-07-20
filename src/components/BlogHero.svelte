@@ -28,20 +28,20 @@
 
 <div class="hero flex gap-2 md:gap-4 flex-col md:flex-row">
 	<div class="hero_left aspect-16/9 border border-cmxblack border-2">
-		<CmsImage {assetId} alt="" class="" />
+		<CmsImage {assetId} alt="" class="object-cover w-full h-full" />
 	</div>
 	<div class="hero_right flex flex-col gap-4">
-		<div></div>
-		<h1 class="text-2xl md:text-4xl font-black text-cmxblack leading-1 hover:underline">
-			<a href="/blog/{slug}">{title}</a>
-		</h1>
-		<div class="">
+		<a href="/blog/{slug}" class="text-cmxblack hover:underline focus:outline focus:outline-cmxgreen focus:outline-2 focus:outline-offset-2">
+			<h2 class="text-3xl md:text-4xl font-black leading-1">
+				{title}
+			</h2>
+		</a>
+		<div>
 			<p class="text-md font-semibold">
 				{#each authors as author, i}
-					<span
-						>{author.authors_id.name || ''}{#if i < authors.length - 1},
-						{/if}</span
-					>
+					<span>
+						{author.authors_id.name || ''}{#if i < authors.length - 1},{/if}
+					</span>
 				{/each}
 			</p>
 			<p class="text-sm">

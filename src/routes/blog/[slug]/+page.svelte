@@ -56,7 +56,7 @@
 	</div>
 	<CmsImage
 		assetId={post.post_image}
-		alt="Imagen de blog"
+		alt=""
 		class="w-full max-h-[450px] object-cover mb-8"
 	/>
 	<div

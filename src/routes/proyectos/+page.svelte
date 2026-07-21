@@ -39,10 +39,30 @@
   <h2 class="text-4xl font-bold my-3">Nuestras líneas estratégicas</h2>
   <p class="text-xl my-3">Desarrollamos habilidades, acompañamos equipos y construimos herramientas digitales.</p>
   <div class="flex flex-col md:flex-row gap-12 my-14">
-    <IconTextAction icon="/proyectos-1.png" subtitle="Escuela Digital" description="Capacitamos a equipos de gobierno y sociedad civil sobre cómo implementar tecnología y estrategias digitales."/>
-    <IconTextAction icon="/proyectos-2.png" subtitle="Mapeos Participativos" description="Capacitación e implementación de mapeos ciudadanos para la recolección de datos. Por ejemplo: rutas de transporte público, infraestructura ciclista, espacios públicos, etc."/>
-    <IconTextAction icon="/proyectos-3.png" subtitle="Participación Ciudadana" description="Implementación de soluciones de participación digital y acompañamiento en estrategias participativas."/>
-    <IconTextAction icon="/proyectos-4.png" subtitle="Datos Abiertos" description="Implementación de portales de datos abiertos, acompañamiento para la creación de planes de apertura y desarrollo de política pública."/>
+    <IconTextAction 
+      icon="/proyectos-1.png" 
+      title="Escuela Digital" 
+      headingLevel="h3"
+      description="Capacitamos a equipos de gobierno y sociedad civil sobre cómo implementar tecnología y estrategias digitales."
+    />
+    <IconTextAction 
+      icon="/proyectos-2.png" 
+      title="Mapeos Participativos" 
+      headingLevel="h3"
+      description="Capacitación e implementación de mapeos ciudadanos para la recolección de datos. Por ejemplo: rutas de transporte público, infraestructura ciclista, espacios públicos, etc."
+    />
+    <IconTextAction 
+      icon="/proyectos-3.png" 
+      title="Participación Ciudadana" 
+      headingLevel="h3"
+      description="Implementación de soluciones de participación digital y acompañamiento en estrategias participativas."
+    />
+    <IconTextAction 
+      icon="/proyectos-4.png" 
+      title="Datos Abiertos" 
+      headingLevel="h3"
+      description="Implementación de portales de datos abiertos, acompañamiento para la creación de planes de apertura y desarrollo de política pública."
+    />
   </div>
 </section>
 

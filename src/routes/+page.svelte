@@ -32,8 +32,22 @@
 <section id="con-quien-trabajamos" class="bg-[#E6F8EE] py-8 w-full mx-auto my-8">
 	<div class="container m-auto">
 		<div class="flex flex-col md:flex-row my-10 gap-20 p-10 justify-center">
-			<IconTextAction icon="/who_1.png" title="Organizaciones" description="Construimos herramientas digitales, abrimos conocimiento y acompañamos a equipos técnicos y no técnicos." action="/proyectos" action_label="Colaboremos"/>
-			<IconTextAction icon="/who_2.png" title="Personas" description="Colaboramos con personas de todos los perfiles, cualquiera que comparta nuestros principios, valores y código de conducta puede ser parte de esta comunidad." action="/comunidad" action_label="Súmate"/>
+			<IconTextAction 
+				icon="/who_1.png" 
+				title="Organizaciones" 
+				headingLevel="h2"
+				description="Construimos herramientas digitales, abrimos conocimiento y acompañamos a equipos técnicos y no técnicos." 
+				action="/proyectos" 
+				action_label="Colaboremos"
+			/>
+			<IconTextAction 
+				icon="/who_2.png" 
+				title="Personas" 
+				headingLevel="h2"
+				description="Colaboramos con personas de todos los perfiles, cualquiera que comparta nuestros principios, valores y código de conducta puede ser parte de esta comunidad." 
+				action="/comunidad" 
+				action_label="Súmate"
+			/>
 		</div>
 	</div>
 </section>
@@ -71,6 +85,7 @@
 		<ArticleCard
 		slug={post.slug}
 		title={post.title}
+		headingLevel='h3'
 		tags={post.tags}
 		authors={post.authors}
 		date={post.date_published || post.date_created}

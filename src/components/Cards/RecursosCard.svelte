@@ -1,17 +1,18 @@
 <script>
   import ExternalLinkIcon from "@/components/Icon/ExternalLink.svelte";
-  let { title='', subtitle='', url, authors = undefined } = $props();
+  let { title, headingLevel, url, authors = undefined } = $props();
 </script>
 
 <a href={url} target="_blank" rel="noopener noreferrer" 
   class="bg-zinc-100 hover:bg-zinc-200 h-[150px] p-5 flex justify-between focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-cmxred"
 >
   <div>
-    {#if title}
+    {#if headingLevel === 'h3'}
       <h3 class="text-xl font-bold">{title}</h3>
-    {/if}
-    {#if subtitle}
-      <h4 class="text-xl font-bold">{subtitle}</h4>
+    {:else if headingLevel === 'h4'}
+      <h4 class="text-xl font-bold">{title}</h4>
+    {:else}
+      <p>{title}</p>
     {/if}
     {#if authors}
     <p>
